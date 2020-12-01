@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<!-- <script type="text/javascript">
+			
+			var a =prompt("请输入充值金额");
+		
+			document.write(a+"</br>");
+			
+			var b=prompt("请输入商品金额"); 
+				
+			document.write(b+"</br>");
+			
+			
+			var c=a>=100?b*0.8:b;  
+			
+			document.write("您折扣后加价格"+c+"</br>");
+			
+			var d = c>a?c-a:0;
+			document.write("您还需再支付"+d+"</br>");
+			var e = c<a?a-c:"0";
+			document.write("您的余额为"+e);
+		</script> -->
+		
+		<!-- <script type="text/javascript">
+			function tes(a,b,g,f,r,t,f,g,v,b,n,h){
+				if(tes.length>arguments.length){
+					document.write("形参多了");
+				}else if(tes.length<arguments.length){
+					document.write("实参多了");
+				}else{
+					document.write("相等");
+				}
+			}
+			tes(99,100,"我是谁",88,4432,3,4,5,2,1,1);
+			
+		</script> -->
+		
+		  <script type="text/javascript">
+		   	  var a =confirm("男生嘛？")
+			  var b =confirm("成年嘛？")
+		      var c =a==true?"男":"女"
+			  var d =b==true?"成年":"未成年";
+			  document.write("性别:"+c+"年龄："+d)
+		   </script>
+			<!-- <script type="text/javascript">
+				function js (a){
+					 if(a=="喵"){
+						 return document.write('猫咪');
+					 }else if (a=='汪汪'){
+						 return document.write('狗');
+					 }else{
+						 return '我也不知道是什么动物';
+					 }
+				}
+					js('汪汪');
+			</script> -->
+			  <!-- <script type="text/javascript">
+					function sum(a,b){
+						 document.write(Number(a)+Number(b))
+					}
+					
+					
+					sum(prompt('请输入第一个数'),prompt('请输入第二个数'));
+					
+					
+			  </script> -->
+			  <!-- <script type="text/javascript">
+			  	var a= '哇哇哇哇';
+				document.write(typeof(a))
+			  </script> -->
+			  <!-- <script type="text/javascript">
+
+						function digitUppercase(price) {
+						  const fraction = ['角', '分'];
+						  const digit = ['零', '壹', '贰', '叁', '肆', '伍', '陆', '柒', '捌', '玖'];
+						  const unit = [
+						    ['元', '万', '亿'],
+						    ['', '拾', '佰', '仟'],
+						  ];
+						  let num = Math.abs(price);
+						  let s = '';
+						  fraction.forEach((item, index) => {
+						    s += (digit[Math.floor(num * 10 * (10 ** index)) % 10] + item).replace(/零./, '');
+						  });
+						  s = s || '整';
+						  num = Math.floor(num);
+						  for (let i = 0; i < unit[0].length && num > 0; i += 1) {
+						    let p = '';
+						    for (let j = 0; j < unit[1].length && num > 0; j += 1) {
+						      p = digit[num % 10] + unit[1][j] + p;
+						      num = Math.floor(num / 10);
+						    }
+						    s = p.replace(/(零.)*零$/, '').replace(/^$/, '零') + unit[0][i] + s;
+						  }
+						
+						  return s.replace(/(零.)*零元/, '元').replace(/(零.)+/g, '零').replace(/^整$/, '零元整');
+						}
+						
+						document.write(digitUppercase(prompt()))
+			  </script> -->
+		      
+	</head>
+	<body>
+			
+	</body>
+</html>

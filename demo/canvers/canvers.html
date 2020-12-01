@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .zx{
+            transform:translate(-25px,-36px);
+            animation-name: zxx;
+            animation-duration: 2s;
+            
+            animation-iteration-count: infinite;
+            
+        }
+        @keyframes zxx{
+                0%{
+                    transform:translate(-25px,-36px);
+                }
+                50%{
+                    transform:translate(375px,364px);
+                }
+                100%{
+                    transform:translate(-25px,-36px);
+
+                }
+              
+        }
+    </style>
+</head>
+<body>
+    <svg style="background-color: rebeccapurple;" 
+     width="500" height="500" viewBox="0 0 500 500">
+       
+        <g  id="z" clip-path="url(#clip-z)">
+          <path id="zx" class="zx"   d="M125,36,25,35.6h0v100h99.718Z" " fill="#f05353"/>
+        </g>
+      </svg>
+      
+      
+      
+</body>
+</html>

@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<script src="../../pacakge/jquery-3.4.1.min.js" type="text/javascript" charset="utf-8"></script>
+		<title></title>
+		<style type="text/css">
+			body {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				margin: 0;
+				padding: 0;
+				width: 100vw;
+				height: 100vh;
+			}
+
+			.div_no_1_sp {
+
+				width: 50vw;
+				
+				box-sizing: border-box;
+			}
+
+			.form_1 {
+				display: inline-block;
+				width: 100%;
+				height: 100%;
+			}
+
+			.form_1 td {
+				width: 100vw;
+				height: 5vh;
+				text-align: center;
+			
+			}
+
+			.form_1 tr {
+				height: 3vh;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="div_no_1_sp">
+			<form id="Form" class="form_tab" action="" method="post">
+				<table id="" class="form_1" border="01" cellspacing="0" cellpadding="">
+
+					<tr>
+						<th>选择</th>
+						<th>商品名称</th>
+						<th>单价</th>
+						<th>数量</th>
+						<th>小计</th>
+					</tr>
+
+					<tr>
+						<td>
+							<input type="checkbox" name="" id="tr_1" value="" />
+						</td>
+						<td>iphone6</td>
+						<td>1000</td>
+						<td>
+							<button id="minus" type="button">-</button>
+							<span>1</span>
+							<button id="add" type="button">+</button>
+						</td>
+						<td>1000</td>
+					</tr>
+
+					<tr>
+						<td>
+							<input type="checkbox" name="" id="tr_1" value="" />
+						</td>
+						<td>iphone6 plus</td>
+						<td>1000</td>
+						<td>
+							<button id="minus" type="button">-</button>
+							<span>1</span>
+							<button id="add" type="button">+</button>
+						</td>
+						<td>1000</td>
+					</tr>
+
+					<tr>
+						<td>
+							<input type="checkbox" name="" id="tr_1" value="" />
+						</td>
+						<td>ipad Air 2</td>
+						<td>1000</td>
+						<td>
+							<button id="minus" type="button">-</button>
+							<span>1</span>
+							<button id="add" type="button">+</button>
+						</td>
+						<td>1000</td>
+					</tr>
+
+					<tr>
+						<td style="text-align: right;padding-right: 50px;" colspan="4">total:</td>
+						<td id="amounts">总计：</td>
+					</tr>
+				</table>
+			</form>
+		</div>
+		
+		
+		
+		
+		<script type="text/javascript">
+			var t_r = $("tr");
+			
+			var span = $("span");
+			
+			var btn = $("button");
+			
+			
+			
+			var amounts=document.getElementById('amounts')
+
+			var apend='<tr><td><input type="checkbox" name="" id="tr_1" value="" /></td><td>iphone6</td><td>4488.00</td><td><button type="button">-</button><span>1</span><button type="button">+</button></td><td>4480.00</td></tr>'
+			
+			var s = [];
+			
+			for (var i = 1; i < t_r.length - 1; i++) {
+				s.push(t_r[i])
+				
+			}
+			//默认总价
+			var m_amount=0;
+			
+			for(let i=0;i<s.length;i++){
+				m_amount+=parseInt(s[i].children[4].innerHTML)
+				
+				// last_td+=parseInt(s[i].children[4].innerHTML)
+				
+			}
+			amounts.innerHTML=`￥${m_amount}.00`
+			console.log(m_amount)
+			//默认结束
+			for (var i = 0; i < btn.length; i++) {
+				
+					
+					
+				btn[i].onclick = function() {
+					var thisBtn= this;
+					var parent=thisBtn.parentNode.children[1];
+					
+					var danjia =parseInt(parent.parentNode.parentNode.children[2].innerHTML);
+					
+					var trIsAmount =thisBtn.parentNode.parentNode.children[4]
+					var nnn=parseInt(parent.innerHTML)
+					if(thisBtn.innerHTML=='+'){
+						// console.log(nnn)
+						nnn+=1
+						trIsAmount.innerHTML=danjia*nnn+('.00')
+						// console.log(trIsAmount)
+						
+					}else if(nnn>1){
+						nnn-=1
+						
+						trIsAmount.innerHTML=danjia*nnn+('.00')
+						
+						
+					}
+					parent.innerHTML=nnn;
+					
+					// console.log(danjia+"*"+parent.innerHTML)
+					console.log(trIsAmount)
+					
+					//计算总价
+					var subtotal=0;
+					var last_td=0
+					// console.log(last_td)
+					// if
+					for(let i=0;i<s.length;i++){
+						subtotal+=parseInt(s[i].children[4].innerHTML)
+						
+						last_td+=parseInt(s[i].children[4].innerHTML)
+						
+						amounts.innerHTML=subtotal+'.00'
+						console.log(last_td)
+						// console.log(subtotal)
+						// console.log(amounts)
+					}
+						
+					
+					//计算总价stop
+		
+				}
+				
+				}
+					
+				
+			
+			
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0 auto;
+        padding: 0;
+        position: relative;
+        height: 600px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .box{
+       height: 200px;
+        background-color: aquamarine;
+    }
+    .time{
+        font-weight: 1000;
+        font-size:20px;
+        padding: 10px;
+        height: 100px;
+        background-color:rgb(1, 255, 120);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+    }
+   
+</style>
+<body>
+    <div class="box">
+        <div id="T"  class="time">00 00 00 00</div>
+        <div id="T2" class="time">00 00 00 00</div>
+    </div>
+    
+    <script>
+             //补零
+        function $(id){
+            return document.getElementById(id);
+        }
+        function timeFormat(time){
+            if(time<=9){
+                time='0'+time
+            }
+            return time
+        }
+            // 当前时间
+        setInterval(
+        function fun() { 
+            var T= $('T')
+            var date= new Date();
+            T.innerHTML='当前时间:'+date.getFullYear()
+            +"/"+date.getMonth()+'/'+date.getDate()
+            +'&nbsp;&nbsp'+timeFormat(date.getHours())+'时'
+            +timeFormat(date.getMinutes())+'分'
+            +timeFormat(date.getSeconds())+'秒';
+        }
+        ,1000)
+            //传参倒计时
+        function time(r1){
+            var T2=$('T2')
+            var a=new Date();
+            var b=new Date(r1);
+            var c=b-a;
+            c=Math.floor(c/1000);
+            var day=Math.floor(c/(24*60*60));
+            var hour=c%(24*60*60);
+            hour=Math.floor(hour/(60*60))
+            var mic=Math.floor(c%(60*60))
+            mic=Math.floor(mic/60)
+            var second=Math.floor(c%60)
+            a.toLocaleString
+            T2.innerHTML='距离  '+b.toLocaleDateString()
+            +'   还有:'+timeFormat(day)+'天'
+            +timeFormat(hour)+'小时'+timeFormat(mic)+'分钟'
+            +timeFormat(second)+'秒';
+
+            if(day==0 && hour==0 &&mic==0 && second==0){
+                alert('时间到!!')
+                clearInterval(terval)
+            }
+
+        }
+         var terval= setInterval(
+            "time('2020/4/10 4:14:30')"
+         ,1000)
+
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="/pacakge/jquery-3.4.1.min.js"></script>
+  <script>
+    $(document).ready(function() {
+$('html').on('DOMMouseScroll mousewheel', function (e) {
+  if(e.originalEvent.detail > 0 || e.originalEvent.wheelDelta < 0) { //alternative options for wheelData: wheelDeltaX & wheelDeltaY
+    //scroll down
+    console.log('Down');
+    $( "#header-nav" ).addClass( "hide-nav-bar" );
+  } else {
+    //scroll up
+    console.log('Up');
+    $( "#header-nav" ).removeClass( "hide-nav-bar" );
+  }
+  //prevent page fom scrolling
+  //return false;
+});
+
+// On click show menu on small screen
+
+  $('body').addClass('js');
+  var $menu = $('#menu'),
+    $menulink = $('.menu-link');
+  
+$menulink.click(function() {
+  $menulink.toggleClass('active');
+  $menu.toggleClass('active');
+  return false;
+});
+
+var toggled = 0;
+
+$('.menu-link').click(function(){
+  if(toggled == 0){
+  $('.bar3').stop().transition({rotate: "45", "margin-top": "13px"});
+  $('.bar2').stop().transition({opacity: "0"}, "fast");
+  $('.bar1').stop().transition({rotate: "-45", "margin-top": "13px"});
+    toggled++;
+    console.log("toggled down")
+  }
+  else{
+    
+  $('.bar3').stop().transition({rotate: "+=135", "margin-top": "3px"});
+  $('.bar2').transition({opacity: "1"}, "fast");
+  $('.bar1').stop().transition({rotate: "-=135", "margin-top": "23px"});
+  toggled--;
+   console.log("Togged Up")
+  }
+});
+  });
+  </script>
+ <style>
+   *{
+     margin: 0;
+   }
+   a {
+  text-decoration: none;
+  color: #fff;
+}
+a:hover {
+  color: #fff;
+}
+#header-nav {
+  position: fixed;
+  top: 0;
+  display: block;
+  width: 100%;
+  background: black;
+  -webkit-transition: -webkit-transform 0.7s 0.3s ease;
+  -moz-transition: -moz-transform 0.7s 0.3s ease;
+  -ms-transition: -ms-transform 0.7s 0.3s ease;
+  transition: transform 0.7s 0.3s ease;
+  -webkit-backface-visibility: hidden;
+  -webkit-transform: translate3d(0px, 0px, 0px);
+}
+#header-nav.hide-nav-bar {
+  -webkit-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  transform: translate(0, -100%);
+  -webkit-backface-visibility: hidden;
+}
+a.menu-link {
+  float: right;
+  display: block;
+  padding: 1em;
+}
+nav[role=navigation] {
+  clear: right;
+  -webkit-transition: all 0.3s ease-out;
+  -moz-transition: all 0.3s ease-out;
+  -ms-transition: all 0.3s ease-out;
+  -o-transition: all 0.3s ease-out;
+  transition: all 0.3s ease-out;
+}
+.js nav[role=navigation] {
+  overflow: hidden;
+  max-height: 0;
+}
+nav[role=navigation].active {
+  max-height: 15em;
+}
+nav[role=navigation] ul {
+  margin: 0;
+  padding: 0;
+  float: left;
+  padding: 0.7em 0;
+}
+nav[role=navigation] li a {
+  display: block;
+  padding: 0.8em;
+  font-size: 0.9em;
+}
+.menu-link {
+  height: 30px;
+  width: 33px;
+  cursor: pointer;
+}
+.bar1,
+.bar2,
+.bar3 {
+  margin-top: 3px;
+  background: #999;
+  width: 33px;
+  height: 4px;
+  position: absolute;
+  -webkit-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  -moz-transform: rotate(-180deg);
+  -o-transform: rotate(-180deg);
+}
+.bar2 {
+  margin-top: 13px;
+}
+.bar3 {
+  margin-top: 23px;
+  -webkit-transform: rotate(180deg);
+  transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+}
+.brand {
+  float: left;
+  margin-left: 1em;
+  padding: 1em;
+}
+.brand h1 {
+  margin: 0;
+  font-size: 1.5em;
+}
+@media screen and (min-width: 48.25em) {
+  a.menu-link {
+    display: none;
+  }
+  .js nav[role=navigation] {
+    max-height: none;
+  }
+  nav[role=navigation] ul {
+    margin: 0 0 0 -0.25em;
+    border: 0;
+    float: right;
+  }
+  nav[role=navigation] li {
+    display: inline-block;
+    margin: 0 0.25em;
+  }
+  nav[role=navigation] li a {
+    border: 0;
+  }
+}
+.container {
+  max-width: 72em;
+  margin: 0 auto;
+}
+section {
+  margin-top: 4em;
+  padding: 1em;
+  color: #5c5c5c;
+}
+section hr {
+  border-bottom: none;
+  color: #f2f2f2;
+}
+.info {
+  text-align: center;
+}
+
+ </style>
+</head>
+<body>
+
+<!-- /Menu-->
+<div id="header-nav">
+  <div class="container">
+<!-- H1 for SEO -->
+  <div class="brand">
+    <a href="/"><h1>Ghostlab</h1></a>
+  </div>
+  <!-- Small screen menu button -->
+  <a href="#menu" class="menu-link">
+    <span class="bar1"></span>
+    <span class="bar2"></span>
+    <span class="bar3"></span>
+   </a>
+  <!-- /Small screen menu button -->
+  
+  <!-- Menu Items -->
+  <nav id="menu" role="navigation">
+    <ul>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Products</a></li>
+      <li><a href="#">Services</a></li>
+      <li><a href="#">Contact</a></li>
+      <li><a href="/html/sginIn.html">login</a></li>
+    </ul>
+  </nav>
+  <!-- /Menu Items -->
+    </div>
+</div>
+
+</body>
+</html>

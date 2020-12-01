@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style type="text/css">
+		
+		.Cont{
+			width: 100px;
+			height: 100px;
+			border: 1px solid grey;
+		}
+		.box{
+			width: 100px;
+			height: 100px;
+			background-color: red;
+		}
+		
+	</style>
+    
+	
+</head>
+<body>
+	<div id="content" class="Cont">
+		
+		<ul id="oneli">
+			<a href="text.txt">
+				<li>one</li>
+			</a>
+			
+			<a href="text2.txt">
+				<li>to</li>
+			</a>
+			
+			<a href="text3.txt">
+				<li>sri</li>
+				
+			</a>
+		</ul>
+		<div id="B" class="box"></div>
+	</div>
+</body>
+	<script>
+		function $(a){
+			return document.getElementById(a);
+		}
+		
+		
+		var li=$('oneli').getElementsByTagName('a')
+       window.onload=function (){
+			var news=new XMLHttpRequest();
+			var li=$('oneli').getElementsByTagName('a');
+
+			for(var i=0;i<li.length;i++){
+				li[i].onclick=function () {
+					return false
+					var ff=li[i].href
+					news.open('GET',ff+""+new Date())
+
+					news.send(null);
+					news.onreadystatechange=function(){
+					if(news.readyState == 4){
+						if(news.status == 200 || news.satus == 304){
+							$('B').innerHTML=news.responseText
+							return false
+							}
+						}
+						return false
+					}
+					
+				}
+				return false
+
+			}
+
+			return false;
+	   }
+	</script> 
+</html>

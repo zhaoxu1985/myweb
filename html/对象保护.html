@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //s
+        var s={
+            id:124,
+            name:'zx',
+            _age:18
+        }
+
+        Object.defineProperties(s,{
+            _age:{
+                // writable:false,
+                enumerable:false
+            },
+            age:{
+                get:function(){
+                    console.log('get')
+                    return this._age
+                },
+                set:function(value){
+                    console.log('set')
+                    if(value>=18 && value<=28){
+                        this._age=value;
+                    }else{
+                        throw '错误'
+                    }
+                     
+                }
+            }
+        })
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		
+		<style type="text/css">
+			.lagan{
+				width: 400px;
+				height: 300px;
+				border: 1px solid black;
+				overflow-x:scroll;
+				box-sizing: border-box;
+			}
+			.nei{
+				height: 200px;
+				width: 1000px;
+				background-color: #FF7F50;
+				
+			}
+			.lagan::-webkit-scrollbar{
+				display: none;
+			}
+			.zixun{
+				width: 390px;
+				height: 30px;
+				background-color: #5F7F50;
+				position: absolute;
+				display:inline-block;
+			}
+			.zixun a:focus .zixun{
+				height:200px;
+				background-color: #FFFFFF;
+			}
+			 a{
+				float: right;
+				margin-right:10px;
+				font-size:20px;
+				text-decoration: none;
+				-webkit-transition:transform 0.4s linear;
+			}
+			a:focus .zixun{
+				-webkit-transform:rotate(90deg);
+			}
+			.shangsheng{
+				width: 100px;
+				height: 200px;
+				background-color: #000000;
+				-webkit-transition: margin-left 0.2s linear;
+				position: absolute;
+			}
+			.shangsheng:hover{
+				
+				margin-left:10px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		
+		<div class="lagan">
+			<div class="nei">
+				32242423424242424234344444444444444444444444444444433333333333333333333333333333333gggggggggggrrrrrrrrrrrrrrrrr
+				
+			</div>
+			<div id="zixun_kuandu" class="zixun">
+			    新闻资讯&copy;
+			    <a id="nv" href="#">></a>
+				
+			</div>
+			<div class="">
+				
+			</div>
+		
+		</div>
+		
+	</body>
+</html>

@@ -1,0 +1,1073 @@
+<!DOCTYPE html>
+<html>
+	
+	<!-- 姓名:赵旭
+	系别:信息工程学院
+	班级,软件194
+	学号:1936212187. -->
+	
+	
+	<head>
+		<meta charset="utf-8" />
+		<title>软件194-赵旭</title>
+		<link rel="stylesheet" type="text/css" href="css/com.css"/>
+		<link rel="stylesheet" type="text/css" href="css/style.css"/>
+		<link rel="stylesheet" type="text/css" href="css/nav.css"/>
+		<link rel="stylesheet" type="text/css" href="css/lb.css"/>
+		<link rel="stylesheet" type="text/css" href="css/dongtai.css"/>
+		<script src="js/xuehua.min.js" type="text/javascript" charset="utf-8" ></script>
+		<script src="js/lb.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/vue.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/jquery.min.js" type="text/javascript" charset="utf-8"></script>
+		<script src="js/script.js" type="text/javascript" charset="utf-8"></script>
+		<!-- <打字放大> -->
+		
+		<style>
+		
+		
+		.red {
+		  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
+		}
+		
+		.container {
+		  position:absolute;
+		  left:50%;
+		  
+		  -webkit-transform: translate(-50%,-50%);
+		          transform: translate(-50%,-50%);
+		  /* margin-top:-30px; */
+		  text-align:center;
+		}
+		
+		h1 {
+		  color: #fff;
+		  text-transform: uppercase;
+		  margin-bottom: 10px;
+		}
+		
+		.nice-input {
+		  position: absolute;
+		}
+		
+		.nice-input input {
+		  border:none;
+		  border-radius:4px;
+		  padding:7px 10px;
+		  font-family: 'Lato', sans-serif;
+		  font-size:14px;
+		  box-shadow: rgba(0,0,0,.05) 0 5px 20px;
+		  letter-spacing:0;
+		  width:220px;
+		  color: transparent;
+		  font-weight:900;
+		}
+		
+		.nice-input input:focus {
+		  outline:none;
+		  box-shadow: rgba(0,0,0,.1) 0 5px 20px;
+		}
+		
+		.nice-input label {
+		  position: absolute;
+		  top: 6px;
+		  left: 10px;
+		  letter-spacing:0;
+		  font-size:0;
+		}
+		
+		.nice-input span {
+		  font-family: 'Lato', sans-serif;
+		  font-size:14px;
+		  font-weight:900;
+		}
+		
+		.nice-input__animate {
+		  -webkit-animation: print .2s 1 ease-in-out;
+		          animation: print .2s 1 ease-in-out;
+		}
+		
+		.shake {
+		  -webkit-animation: shake .2s 1 ease-in-out;
+		          animation: shake .2s 1 ease-in-out;
+		}
+		
+		@-webkit-keyframes print {
+		  from{
+		  position:absolute;
+		  -webkit-transform: scale(50);
+		          transform: scale(50);
+		  /* uncomment for freeze */  
+		  /*   filter:blur(1px); */
+		  }
+		  99% {
+		  position:absolute;
+		  }
+		  to {
+		  position:relative;
+		  }
+		}
+		
+		@keyframes print {
+		  from{
+		  /* position:absolute; */
+		  -webkit-transform: scale(50);
+		          transform: scale(50);
+		  /* uncomment for freeze */  
+		  /*   filter:blur(1px); */
+		  }
+		  99% {
+		  position:absolute;
+		  }
+		  to {
+		  position:relative;
+		  }
+		}
+		
+		@-webkit-keyframes shake {
+		  from,
+		  to {
+		  }
+		  50% {
+		    -webkit-transform:scale(0.97);
+		            transform:scale(0.97);
+		  }
+		}
+		
+		@keyframes shake {
+		  from,
+		  to {
+		  }
+		  50% {
+		    -webkit-transform:scale(0.97);
+		            transform:scale(0.97);
+		  }
+		}
+		</style>
+		<!-- 放大结束 -->
+		
+		<!-- 轮播样式开始 -->
+		<script>
+		window.onload = function () {
+		  // 轮播选项
+		  const options = {
+			id: 'lb-1',              // 轮播盒ID
+			speed: 600,              // 轮播速度(ms)
+			delay: 3000,             // 轮播延迟(ms)
+			direction: 'left',       // 图片滑动方向
+			moniterKeyEvent: true,   // 是否监听键盘事件
+			moniterTouchEvent: true  // 是否监听屏幕滑动事件
+		  }
+		  const lb = new Lb(options);
+		  lb.start();
+		}
+		</script>
+		<!-- 轮播样式结束 -->
+		
+		
+	</head>
+	<body>
+		<div class="box">
+			<div class="box_background">
+				
+				<!-- 雪花开始 -->
+				<script>
+				(function ($) {
+				    function getTransformProperty(element)
+				    {
+				        // Try transform first for forward compatibility
+				        // In some versions of IE9, it is critical for msTransform to be in
+				        // this list before MozTranform.
+				        var properties = ['transform', 'WebkitTransform', 'msTransform', 'MozTransform', 'OTransform'];
+				        var p;
+				        while (p = properties.shift())
+				        {
+				            if (typeof element.style[p] != 'undefined')
+				            {
+				                return p;
+				            }
+				        }
+				        
+				        // Default to transform also
+				        return 'transform';
+				    }
+				    
+				    var _propsObj = null;
+				    
+				    var proxied = $.fn.css;
+				    $.fn.css = function (arg, val)
+				    {
+				        // Temporary solution for current 1.6.x incompatibility, while
+				        // preserving 1.3.x compatibility, until I can rewrite using CSS Hooks
+				        if (_propsObj === null)
+				        {
+				            if (typeof $.cssProps != 'undefined')
+				            {
+				                _propsObj = $.cssProps;
+				            }
+				            else if (typeof $.props != 'undefined')
+				            {
+				                _propsObj = $.props;
+				            }
+				            else
+				            {
+				                _propsObj = {}
+				            }
+				        }
+				        
+				        // Find the correct browser specific property and setup the mapping using
+				        // $.props which is used internally by jQuery.attr() when setting CSS
+				        // properties via either the css(name, value) or css(properties) method.
+				        // The problem with doing this once outside of css() method is that you
+				        // need a DOM node to find the right CSS property, and there is some risk
+				        // that somebody would call the css() method before body has loaded or any
+				        // DOM-is-ready events have fired.
+				        if
+				        (
+				            typeof _propsObj['transform'] == 'undefined'
+				            &&
+				            (
+				                arg == 'transform'
+				                ||
+				                (
+				                    typeof arg == 'object'
+				                    && typeof arg['transform'] != 'undefined'
+				                )
+				            )
+				        )
+				        {
+				            _propsObj['transform'] = getTransformProperty(this.get(0));
+				        }
+				        
+				        // We force the property mapping here because jQuery.attr() does
+				        // property mapping with jQuery.props when setting a CSS property,
+				        // but curCSS() does *not* do property mapping when *getting* a
+				        // CSS property.  (It probably should since it manually does it
+				        // for 'float' now anyway... but that'd require more testing.)
+				        //
+				        // But, only do the forced mapping if the correct CSS property
+				        // is not 'transform' and is something else.
+				        if (_propsObj['transform'] != 'transform')
+				        {
+				            // Call in form of css('transform' ...)
+				            if (arg == 'transform')
+				            {
+				                arg = _propsObj['transform'];
+				                
+				                // User wants to GET the transform CSS, and in jQuery 1.4.3
+				                // calls to css() for transforms return a matrix rather than
+				                // the actual string specified by the user... avoid that
+				                // behavior and return the string by calling jQuery.style()
+				                // directly
+				                if (typeof val == 'undefined' && jQuery.style)
+				                {
+				                    return jQuery.style(this.get(0), arg);
+				                }
+				            }
+				
+				            // Call in form of css({'transform': ...})
+				            else if
+				            (
+				                typeof arg == 'object'
+				                && typeof arg['transform'] != 'undefined'
+				            )
+				            {
+				                arg[_propsObj['transform']] = arg['transform'];
+				                delete arg['transform'];
+				            }
+				        }
+				        
+				        return proxied.apply(this, arguments);
+				    };
+				})(jQuery);
+				
+				/*!
+				/**
+				 * Monkey patch jQuery 1.3.1+ to add support for setting or animating CSS
+				 * scale and rotation independently.
+				 * https://github.com/zachstronaut/jquery-animate-css-rotate-scale
+				 * Released under dual MIT/GPL license just like jQuery.
+				 * 2009-2012 Zachary Johnson www.zachstronaut.com
+				 */
+				(function ($) {
+				    // Updated 2010.11.06
+				    // Updated 2012.10.13 - Firefox 16 transform style returns a matrix rather than a string of transform functions.  This broke the features of this jQuery patch in Firefox 16.  It should be possible to parse the matrix for both scale and rotate (especially when scale is the same for both the X and Y axis), however the matrix does have disadvantages such as using its own units and also 45deg being indistinguishable from 45+360deg.  To get around these issues, this patch tracks internally the scale, rotation, and rotation units for any elements that are .scale()'ed, .rotate()'ed, or animated.  The major consequences of this are that 1. the scaled/rotated element will blow away any other transform rules applied to the same element (such as skew or translate), and 2. the scaled/rotated element is unaware of any preset scale or rotation initally set by page CSS rules.  You will have to explicitly set the starting scale/rotation value.
+				    
+				    function initData($el) {
+				        var _ARS_data = $el.data('_ARS_data');
+				        if (!_ARS_data) {
+				            _ARS_data = {
+				                rotateUnits: 'deg',
+				                scale: 1,
+				                rotate: 0
+				            };
+				            
+				            $el.data('_ARS_data', _ARS_data);
+				        }
+				        
+				        return _ARS_data;
+				    }
+				    
+				    function setTransform($el, data) {
+				        $el.css('transform', 'rotate(' + data.rotate + data.rotateUnits + ') scale(' + data.scale + ',' + data.scale + ')');
+				    }
+				    
+				    $.fn.rotate = function (val) {
+				        var $self = $(this), m, data = initData($self);
+				                        
+				        if (typeof val == 'undefined') {
+				            return data.rotate + data.rotateUnits;
+				        }
+				        
+				        m = val.toString().match(/^(-?\d+(\.\d+)?)(.+)?$/);
+				        if (m) {
+				            if (m[3]) {
+				                data.rotateUnits = m[3];
+				            }
+				            
+				            data.rotate = m[1];
+				            
+				            setTransform($self, data);
+				        }
+				        
+				        return this;
+				    };
+				    
+				    // Note that scale is unitless.
+				    $.fn.scale = function (val) {
+				        var $self = $(this), data = initData($self);
+				        
+				        if (typeof val == 'undefined') {
+				            return data.scale;
+				        }
+				        
+				        data.scale = val;
+				        
+				        setTransform($self, data);
+				        
+				        return this;
+				    };
+				
+				    // fx.cur() must be monkey patched because otherwise it would always
+				    // return 0 for current rotate and scale values
+				    var curProxied = $.fx.prototype.cur;
+				    $.fx.prototype.cur = function () {
+				        if (this.prop == 'rotate') {
+				            return parseFloat($(this.elem).rotate());
+				            
+				        } else if (this.prop == 'scale') {
+				            return parseFloat($(this.elem).scale());
+				        }
+				        
+				        return curProxied.apply(this, arguments);
+				    };
+				    
+				    $.fx.step.rotate = function (fx) {
+				        var data = initData($(fx.elem));
+				        $(fx.elem).rotate(fx.now + data.rotateUnits);
+				    };
+				    
+				    $.fx.step.scale = function (fx) {
+				        $(fx.elem).scale(fx.now);
+				    };
+				    
+				    /*
+				    
+				    Starting on line 3905 of jquery-1.3.2.js we have this code:
+				    
+				    // We need to compute starting value
+				    if ( unit != "px" ) {
+				        self.style[ name ] = (end || 1) + unit;
+				        start = ((end || 1) / e.cur(true)) * start;
+				        self.style[ name ] = start + unit;
+				    }
+				    
+				    This creates a problem where we cannot give units to our custom animation
+				    because if we do then this code will execute and because self.style[name]
+				    does not exist where name is our custom animation's name then e.cur(true)
+				    will likely return zero and create a divide by zero bug which will set
+				    start to NaN.
+				    
+				    The following monkey patch for animate() gets around this by storing the
+				    units used in the rotation definition and then stripping the units off.
+				    
+				    */
+				    
+				    var animateProxied = $.fn.animate;
+				    $.fn.animate = function (prop) {
+				        if (typeof prop['rotate'] != 'undefined') {
+				            var $self, data, m = prop['rotate'].toString().match(/^(([+-]=)?(-?\d+(\.\d+)?))(.+)?$/);
+				            if (m && m[5]) {
+				                $self = $(this);
+				                data = initData($self);
+				                data.rotateUnits = m[5];
+				            }
+				            
+				            prop['rotate'] = m[1];
+				        }
+				        
+				        return animateProxied.apply(this, arguments);
+				    };
+				})(jQuery);
+				
+				(function ($) {    
+				    var ww = 0;
+				    var wh = 0;
+				    var maxw = 0;
+				    var minw = 0;
+				    var maxh = 0;
+				    var textShadowSupport = true;
+				    var xv = 0;
+				    var snowflakes = ["\u2744", "\u2745", "\u2746"];
+				    var prevTime;
+				    var absMax = 200;
+				    var flakeCount = 0;
+				    
+				    $(init);
+				
+				    function init()
+				    {
+				        var detectSize = function ()
+				        {
+				            ww = $(window).width();
+				            wh = $(window).height();
+				            
+				            maxw = ww + 300;
+				            minw = -300;
+				            maxh = wh + 300;
+				        };
+				        
+				        detectSize();
+				        
+				        $(window).resize(detectSize);
+				        
+				        if (!$('body').css('textShadow'))
+				        {
+				            textShadowSupport = false;
+				        }
+				        
+				        /* Should work in Windows 7 /*
+				        if (/windows/i.test(navigator.userAgent))
+				        {
+				            snowflakes = ['*']; // Windows sucks and doesn't have Unicode chars installed
+				            //snowflakes = ['T']; //No FF support for Wingdings
+				        }
+				        */
+				        
+				        // FF seems to just be able to handle like 50... 25 with rotation
+				        // Safari seems fine with 150+... 75 with rotation
+				        var i = 50;
+				        while (i--)
+				        {
+				            addFlake(true);
+				        }
+				        
+				        prevTime = new Date().getTime();
+				        setInterval(move, 50);
+				    }
+				
+				    function addFlake(initial)
+				    {
+				        flakeCount++;
+				        
+				        var sizes = [
+				            {
+				                r: 1.0,
+				                css: {
+				                    fontSize: 15 + Math.floor(Math.random() * 20) + 'px',
+				                    textShadow: '9999px 0 0 rgba(238, 238, 238, 0.5)'
+				                },
+				                v: 2
+				            },
+				            {
+				                r: 0.6,
+				                css: {
+				                    fontSize: 50 + Math.floor(Math.random() * 20) + 'px',
+				                    textShadow: '9999px 0 2px #eee'
+				                },
+				                v: 6
+				            },
+				            {
+				                r: 0.2,
+				                css: {
+				                    fontSize: 90 + Math.floor(Math.random() * 30) + 'px',
+				                    textShadow: '9999px 0 6px #eee'
+				                },
+				                v: 12
+				            },
+				            {
+				                r: 0.1,
+				                css: {
+				                    fontSize: 150 + Math.floor(Math.random() * 50) + 'px',
+				                    textShadow: '9999px 0 24px #eee'
+				                },
+				                v: 20
+				            }
+				        ];
+				    
+				        var $nowflake = $('<span class="winternetz">' + snowflakes[Math.floor(Math.random() * snowflakes.length)] + '</span>').css(
+				            {
+				                /*fontFamily: 'Wingdings',*/
+				                color: '#eee',
+				                display: 'block',
+				                position: 'fixed',
+				                background: 'transparent',
+				                width: 'auto',
+				                height: 'auto',
+				                margin: '0',
+				                padding: '0',
+				                textAlign: 'left',
+				                zIndex: 9999
+				            }
+				        );
+				        
+				        if (textShadowSupport)
+				        {
+				            $nowflake.css('textIndent', '-9999px');
+				        }
+				        
+				        var r = Math.random();
+				    
+				        var i = sizes.length;
+				        
+				        var v = 0;
+				        
+				        while (i--)
+				        {
+				            if (r < sizes[i].r)
+				            {
+				                v = sizes[i].v;
+				                $nowflake.css(sizes[i].css);
+				                break;
+				            }
+				        }
+				    
+				        var x = (-300 + Math.floor(Math.random() * (ww + 300)));
+				        
+				        var y = 0;
+				        if (typeof initial == 'undefined' || !initial)
+				        {
+				            y = -300;
+				        }
+				        else
+				        {
+				            y = (-300 + Math.floor(Math.random() * (wh + 300)));
+				        }
+				    
+				        $nowflake.css(
+				            {
+				                left: x + 'px',
+				                top: y + 'px'
+				            }
+				        );
+				        
+				        $nowflake.data('x', x);
+				        $nowflake.data('y', y);
+				        $nowflake.data('v', v);
+				        $nowflake.data('half_v', Math.round(v * 0.5));
+				        
+				        $('body').append($nowflake);
+				    }
+				    
+				    function move()
+				    {
+				        if (Math.random() > 0.8)
+				        {
+				            xv += -1 + Math.random() * 2;
+				            
+				            if (Math.abs(xv) > 3)
+				            {
+				                xv = 3 * (xv / Math.abs(xv));
+				            }
+				        }
+				        
+				        // Throttle code
+				        var newTime = new Date().getTime();
+				        var diffTime = newTime - prevTime;
+				        prevTime = newTime;
+				        
+				        if (diffTime < 55 && flakeCount < absMax)
+				        {
+				            addFlake();
+				        }
+				        else if (diffTime > 150)
+				        {
+				            $('span.winternetz:first').remove();
+				            flakeCount--;
+				        }
+				        
+				        $('span.winternetz').each(
+				            function ()
+				            {
+				                var x = $(this).data('x');
+				                var y = $(this).data('y');
+				                var v = $(this).data('v');
+				                var half_v = $(this).data('half_v');
+				                
+				                y += v;
+				                
+				                x += Math.round(xv * v);
+				                x += -half_v + Math.round(Math.random() * v);
+				                
+				                // because flakes are rotating, the origin could be +/- the size of the flake offset
+				                if (x > maxw)
+				                {
+				                    x = -300;
+				                }
+				                else if (x < minw)
+				                {
+				                    x = ww;
+				                }
+				                
+				                if (y > maxh)
+				                {
+				                    $(this).remove();
+				                    flakeCount--;
+				                    
+				                    addFlake();
+				                }
+				                else
+				                {
+				                    $(this).data('x', x);
+				                    $(this).data('y', y);
+				
+				                    $(this).css(
+				                        {
+				                            left: x + 'px',
+				                            top: y + 'px'
+				                        }
+				                    );
+				                    
+				                    // only spin biggest three flake sizes
+				                    if (v >= 6)
+				                    {
+				                        $(this).animate({rotate: '+=' + half_v + 'deg'}, 0);
+				                    }
+				                }
+				            }
+				        );
+				    }
+				})(jQuery);
+				</script>
+				
+				<!-- 雪花结束 -->
+			</div>
+			<div class="nav_box" style="z-index: 99;position: relative;">
+				<div>
+					<div class="rrr">
+						
+					<div id="yyy">
+				<ul class="v1">首页
+							
+					
+					
+				</ul>
+				<ul class="v1" >我嘞QQ
+					
+					   <ul class="ttt">
+					   <li>1985019435</li>
+					   </ul>
+						
+					</ul>
+					
+				<ul class="v1">产品页面
+					<ul class="ttt">
+						<li>?</li>
+						<li>客官</li>
+						<li>想来点神么嘛？</li>
+						<li>啤酒香烟</li>
+						<li>麻辣小龙虾</li>
+						<li>麻婆豆腐</li>
+						<li>忘情水呀？
+						</li>
+					</ul>
+				</ul>
+				<ul class="v1">视频教程
+					<ul class="ttt">
+						<li>点我</li>
+						<li>点我</li>
+						<li>点我</li>
+					</ul>
+				</ul>
+				<ul class="v1">视频下载
+					<ul class="ttt">
+						<li>这里！</li>
+						<li>这里！</li>
+						<li>这里！</li>
+						<li>这里！</li>
+					</ul>
+				</ul>
+				<ul class="v1">资源下载
+					<ul class="ttt">
+						<li>视频</li>
+						<li>文档</li>
+						<li>没了。。</li>
+						<li>图片</li>
+					</ul>
+				</ul>
+				           </div>
+				    </div>
+					</div>
+				
+			</div>
+			<div class="box_one_1">
+				
+				<div class="lb-box" id="lb-1">
+				<!-- 轮播内容 -->
+				<div class="lb-content">
+				  <div class="lb-item active">
+					<a href="#">
+					  <img src="images/z.png" alt="picture loss">
+					  <span>Description 1</span>
+					</a>
+				  </div>
+				  <div class="lb-item">
+					<a href="#">
+					  <img src="images/t2.png" alt="picture loss">
+					  <span>Description 2</span>
+					</a>
+				  </div>
+				  <div class="lb-item">
+					<a href="#">
+					  <img src="images/t3.png" alt="picture loss">
+					  <span>Description 3</span>
+					</a>
+				  </div>
+				  <div class="lb-item">
+					<a href="#">
+					  <img src="images/t4.png" alt="picture loss">
+					  <span>Description 4</span>
+					</a>
+				  </div>   
+				</div>
+				<!-- 轮播标志 -->
+				<ol class="lb-sign">
+				  <li class="active">1</li>
+				  <li>2</li>
+				  <li>3</li>
+				  <li>4</li>
+				</ol>
+				<!-- 轮播控件 -->
+				<div class="lb-ctrl left">＜</div>
+				<div class="lb-ctrl right">＞</div>
+				</div>
+				
+			</div>
+			
+			
+			<div class="box_to_2">
+				<div class="content">
+					 <div class="content_right">
+					 	<main class="container">
+					 	<h1>你想要搜索点啥?</h1>
+					 	  <div class="nice-input">
+					 	    <input type="text" id="test" v-model="message" />
+					 	    <label for="test">
+					 	      <span class="nice-input__animate" v-for="m in message2">{{m}}</span>
+					 	    </label>
+					 	    </div>
+					 	  </main> 
+					 	
+					 	<script>
+					 	var app = new Vue({
+					 	  el: '.container',
+					 	  data: {
+					 	    message: ''
+					 	  },
+					 	  watch: {
+					 	    message: {
+					 	      handler: function(after,before){
+					 	        if (after.length > before.length) {
+					 	         setTimeout(function(){
+					 	            document.querySelector('.nice-input').classList.add('shake');
+					 	           setTimeout(function(){
+					 	            document.querySelector('.nice-input').classList.remove('shake'); 
+					 	           },300); 
+					 	          },200);
+					 	        }
+					 	      }
+					 	    }
+					 	  },
+					 	  computed: {
+					 	    message2: function(){
+					 	      return this.message.split('');
+					 	    }
+					 	  }
+					 	});
+					 	</script>
+					 </div>
+				</div>
+			</div>
+	
+			<div class="content">
+				<div class="content_xia">
+					
+					<div class="content_xia_left" style="margin-left:150px;">
+						
+					<p>发布需求</p>
+					 <br>
+					<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+						
+					
+					<div class="one_1">
+						<img src="images/pic01.png" >
+					</div>
+					<div class="one_2">
+						大王大大飒飒的  <br>
+					    66666666666
+					</div>
+					  
+						</div>
+						<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+							
+						
+						<div class="one_1">
+							<img src="images/pic01.png" >
+						</div>
+						<div class="one_2">
+							大王大大飒飒的  <br>
+						    66666666666
+						</div>
+						  
+							</div>
+							<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+								
+							
+							<div class="one_1">
+								<img src="images/pic01.png" >
+							</div>
+							<div class="one_2">
+								大王大大飒飒的  <br>
+							    66666666666
+							</div>
+							  
+								</div>
+								<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+									
+								
+								<div class="one_1">
+									<img src="images/pic01.png" >
+								</div>
+								<div class="one_2">
+									大王大大飒飒的  <br>
+								    66666666666
+								</div>
+								  
+									</div>
+									<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+										
+									
+									<div class="one_1">
+										<img src="images/pic01.png" >
+									</div>
+									<div class="one_2">
+										大王大大飒飒的  <br>
+									    66666666666
+									</div>
+									  
+										</div>
+					</div>
+					<div class="content_xia_left" style="margin-left:150px;">
+						
+					<p>发布需求</p>
+					 <br>
+					<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+						
+					
+					<div class="one_1">
+						<img src="images/pic01.png" >
+					</div>
+					<div class="one_2">
+						大王大大飒飒的  <br>
+					    66666666666
+					</div>
+					  
+						</div>
+						<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+							
+						
+						<div class="one_1">
+							<img src="images/pic01.png" >
+						</div>
+						<div class="one_2">
+							大王大大飒飒的  <br>
+						    66666666666
+						</div>
+						  
+							</div>
+							<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+								
+							
+							<div class="one_1">
+								<img src="images/pic01.png" >
+							</div>
+							<div class="one_2">
+								大王大大飒飒的  <br>
+							    66666666666
+							</div>
+							  
+								</div>
+								<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+									
+								
+								<div class="one_1">
+									<img src="images/pic01.png" >
+								</div>
+								<div class="one_2">
+									大王大大飒飒的  <br>
+								    66666666666
+								</div>
+								  
+									</div>
+									<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+										
+									
+									<div class="one_1">
+										<img src="images/pic01.png" >
+									</div>
+									<div class="one_2">
+										大王大大飒飒的  <br>
+									    66666666666
+									</div>
+									  
+										</div>
+					</div>
+					
+					<div class="content_xia_left" style="margin-left:150px;">
+						
+					<p>发布需求</p>
+					 <br>
+					<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+						
+					
+					<div class="one_1">
+						<img src="images/pic01.png" >
+					</div>
+					<div class="one_2">
+						大王大大飒飒的  <br>
+					    66666666666
+					</div>
+					  
+						</div>
+						<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+							
+						
+						<div class="one_1">
+							<img src="images/pic01.png" >
+						</div>
+						<div class="one_2">
+							大王大大飒飒的  <br>
+						    66666666666
+						</div>
+						  
+							</div>
+							<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+								
+							
+							<div class="one_1">
+								<img src="images/pic01.png" >
+							</div>
+							<div class="one_2">
+								大王大大飒飒的  <br>
+							    66666666666
+							</div>
+							  
+								</div>
+								<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+									
+								
+								<div class="one_1">
+									<img src="images/pic01.png" >
+								</div>
+								<div class="one_2">
+									大王大大飒飒的  <br>
+								    66666666666
+								</div>
+								  
+									</div>
+									<div  style="width: 100%; height: 70px;border-bottom:1px solid black;">
+										
+									
+									<div class="one_1">
+										<img src="images/pic01.png" >
+									</div>
+									<div class="one_2">
+										大王大大飒飒的  <br>
+									    66666666666
+									</div>
+									  
+										</div>
+					</div>
+					
+					
+				
+				</div>
+				
+			</div>
+			<div class="box_xing">
+			
+					<div class="body_xingxing">
+						
+					<span style="margin-top:20px;display:block;font-size: 25px;text-align: center;">给个评价吧~~:</span>
+					<span style="float: left;">
+						
+					<nav class="rating">
+					  <ul>
+						  
+					    <li class="current">
+						
+					      <svg>
+					        <use xlink:href="#star"></use>
+					      </svg>
+					    </li>
+					    <li>
+					      <svg>
+					        <use xlink:href="#star"></use>
+					      </svg>
+					    </li>
+					    <li>
+					      <svg>
+					        <use xlink:href="#star"></use>
+					      </svg>
+					    </li>
+					    <li><span></span>
+					      <svg>
+					        <use xlink:href="#star"></use>
+					      </svg>
+					    </li>
+					    <li><span></span>
+					      <svg>
+					        <use xlink:href="#star"></use>
+					      </svg>
+					    </li>
+					  </ul>
+					  <div><span>
+					      <svg>
+					        <use xlink:href="#star"></use>
+					      </svg></span></div>
+					  </nav>
+					</span>
+					<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+					  <symbol xmlns="http://www.w3.org/2000/svg" viewBox="0 0 36 34" id="star">
+					    <path fill="currentColor" d="M19.6859343,0.861782958 L24.8136328,8.05088572 C25.0669318,8.40601432 25.4299179,8.6717536 25.8489524,8.80883508 L34.592052,11.6690221 C35.6704701,12.021812 36.2532905,13.1657829 35.8938178,14.2241526 C35.8056709,14.4836775 35.6647294,14.7229267 35.4795411,14.9273903 L29.901129,21.0864353 C29.5299163,21.4962859 29.3444371,22.0366367 29.3872912,22.5833831 L30.1116131,31.8245163 C30.1987981,32.9368499 29.3506698,33.9079379 28.2172657,33.993502 C27.9437428,34.0141511 27.6687736,33.9809301 27.4085205,33.8957918 L18.6506147,31.0307612 C18.2281197,30.8925477 17.7713439,30.8925477 17.3488489,31.0307612 L8.59094317,33.8957918 C7.51252508,34.2485817 6.34688429,33.6765963 5.98741159,32.6182265 C5.90066055,32.3628116 5.86681029,32.0929542 5.88785051,31.8245163 L6.61217242,22.5833831 C6.65502653,22.0366367 6.46954737,21.4962859 6.09833466,21.0864353 L0.519922484,14.9273903 C-0.235294755,14.0935658 -0.158766688,12.8167745 0.690852706,12.0755971 C0.899189467,11.8938516 1.14297067,11.7555303 1.40741159,11.6690221 L10.1505113,8.80883508 C10.5695458,8.6717536 10.9325319,8.40601432 11.1858308,8.05088572 L16.3135293,0.861782958 C16.9654141,-0.0521682813 18.2488096,-0.274439442 19.1800736,0.365326425 C19.3769294,0.500563797 19.5481352,0.668586713 19.6859343,0.861782958 Z"></path>
+					  </symbol>
+					  <path class="shadow" d="M18.7022469,29.7633426 L29.1611722,33.6861584 C28.8859085,33.8576358 28.5650147,33.9672494 28.2172657,33.993502 C27.9437428,34.0141511 27.6687736,33.9809301 27.4085205,33.8957918 L18.6506147,31.0307612 C18.2281197,30.8925477 17.7713439,30.8925477 17.3488489,31.0307612 L8.59094317,33.8957918 C7.98083887,34.0953792 7.34281791,33.9989813 6.83864817,33.6859784 L17.2977531,29.7633426 C17.7505234,29.5935537 18.2494766,29.5935537 18.7022469,29.7633426 Z"></path>
+					</svg>
+					
+					<script src='js/jquery.min.js'></script>
+					<script src="js/script.js"></script>
+					</div>
+				
+				
+			</div>
+			<!-- <div class="soory">
+				<video width="500" height="500" controls="controls" autoplay="autoplay">
+				  <source src="video/1.mp4"/>
+				
+				  <object data="video/1.mp4" width="320" height="240">
+				    <embed width="320" height="240" src="video/1.mp4" />
+				  </object>
+				</video>
+			</div> -->
+		</div>
+	</body>
+</html>

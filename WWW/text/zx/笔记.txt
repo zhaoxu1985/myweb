@@ -1,0 +1,85 @@
+ 字体加粗  b     倾斜 i  下划线 u
+  /font 字体/     /br 强制换行/    /size  字体大小；像素；
+  
+  
+  
+  无序列表
+    <ul /type=排列样式/ /start=开始数值/>
+         <li>
+		 </li>
+  	</ul>   		BFWXZ1A
+  			 
+  			 / 
+  有序列表
+  			 /<ol>
+  			      <li>
+				  </li>
+  			 </ol>
+  		
+		
+  			 
+  			 <!-- 
+  			   / <pre></pre>  预先格式化标签/ 
+
+			  
+			  
+			  caption=表格标题
+			   属性：1.border=边框的粗细，也包含单元格的边框
+			         2.cellspacing 设置单元格和单元格和之间的距离
+			  				3.cellpadding 设置单元格边框  距离内容的距离
+			   
+			   <tr>
+			        <td></td> // tr=行标签  td=列标签  td默认靠左对齐
+			        <th></th>  //默认居中对齐
+			   </tr>	 
+			   
+			   
+			   
+			   
+			   
+			   &nbsp = 空格
+			   &gt   =大于号
+			   &lt   =小于号
+			   
+			   表单标签 form   语法<form> </form>
+			   输入框 input
+			               type=文本属性“text”  text普通文本
+			   						   name=""内容
+			   						  type "radio"= 单选按钮
+			   						  type "file"=上传文件
+			   						   
+			    按钮
+			   				普通按钮=input type="button"
+			   				提交按钮=input type="submit"
+			   				重置按钮=input type="reset"
+			   				        input type="image" src="图片地址"
+			   				     
+			   				)
+			   				文本域(
+			   				textarea=文本域;  rows=默认N行   cols=默认显示N列
+			   				)
+			   				
+			   				
+			   				form属性  action=提交地址   method=提交方式   提交方式有  get/post
+			   				    get:数据会在地址栏中显示
+			   					post:保密性高,信息不会在地址栏中显示;
+			   				
+			   				
+			   				checkbox=多选
+			   				select=下拉列表；      option{201$年}*9=快捷创建下拉列表；  $后可加  年；月；日；
+			   				
+							
+							
+							
+							action= #提交地址
+							method=提交方法  get/post      get:
+							
+							
+							
+							（tr>td*3）*7=三行七列      (tr>td*7)*3=七行三列
+							  rowspan=跨行合并
+							   colspan=跨列合并
+							   
+							   
+							   
+							   

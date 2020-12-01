@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="">
+    <script>
+
+        // var s=[1,2,3,4,5,6];
+        
+        // // console.log(
+        // //     s.every(function(value,i,s){
+        // //             // console.log(i)
+                  
+        // //     })
+
+        // // )
+        // console.log(count)
+        // -------------------------------------------------？
+
+
+
+            
+                'use strict'
+        var text='aaabbccddeededba';
+    
+        function newstr(str) { 
+            var newstr=[];
+            for(var i=0;i<str.length;i++){
+                    if(newstr.indexOf(str[i])==-1){
+                            newstr.push(str[i])
+                    }
+            }
+            for(var i=0;i<newstr.length;i++){
+                    newstr[i].split((newstr[i]).length-1)
+            }
+            return newstr
+         }
+         
+        var newstr=newstr(text);
+         newstr.arguments
+        function nn(str){
+            var n=[];
+            for(var i=0;i<str.length;i++){
+                 n+=(text.split(newstr[i])).length-1;
+            }
+           return n
+        }
+        var res=newstr.reduce(function(sum,value,i,newstr){
+              
+             
+             var n= nn(newstr)
+            // console.log(num)
+           
+                return sum+=(
+                    newstr[i]+':'+n[i]+('\n')
+                  
+                )
+            
+        },'')
+        
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

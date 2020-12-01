@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+		    * {
+		        margin: 0;
+		        padding: 0;
+		    }
+		    body {
+		        background-color: black;
+		    }
+		    .box {
+		        width: 800px;
+		        height: 500px;
+		        margin: 100px auto;
+		        position: relative;
+		    }
+		    .tree {
+		        width: 200px;
+		        height: 300px;
+		        position: absolute;
+		        bottom: 0;
+		        right: 20px;
+		    }
+		    .c {
+		        width: 0;
+		        height: 0;
+		        border: 100px solid transparent;
+		        border-bottom-color: green;
+		        position: relative;
+		    }
+		    .c1 {
+		        top: 0;
+		        left: 0;
+		    }
+		    .c2 {
+		        top:-125px;
+		        left: 0;
+		    }
+		    .c3 {
+		        top: -250px;
+		        left: 0;
+		    }
+		    .gen {
+		        width: 50px;
+		        height: 100px;
+		        background-color: green;
+		        position: relative;
+		        left: 75px;
+		        top:-275px;
+		    }
+		    .moon {
+		        width: 150px;
+		        height: 150px;
+		        background-color: goldenrod;
+		        border-radius: 50%;
+		        position: relative;
+		        top: 30px;
+		        left: 30px;
+		        box-shadow: 0 0 50px 15px rgba(243, 239, 16, 0.411);
+		    }
+		    .s {
+		        width: 5px;
+		        height: 5px;
+		        background-color: wheat;
+		        transform: rotate(90deg) skew(45deg);
+		        position: fixed;
+		        z-index: 20;
+		        box-shadow: 0 0 5px 1px white;
+		
+		    }
+		    .star {
+		        width: 100%;
+		        position: fixed;
+		        height: 500px;
+		        z-index: 100;
+		
+		    }
+		</style>
+	</head>
+	<body>
+		<div class="box">
+		    <div class="star" id="star">
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		        <div class="s"></div>
+		    </div>
+		    <div class="moon"></div>
+		    <div class="tree">
+		        <div class="c c1"></div>
+		        <div class="c c2"></div>
+		        <div class="c c3"></div>
+		        <div class="gen"></div>
+			
+		    </div>
+		</div>
+		
+		<script type="text/javascript">
+			
+			        var star = document.getElementById('star');
+			        var ss = star.getElementsByTagName('div');
+			        for(var i =0;i < ss.length;i++){
+			            var randX = Math.floor(Math.random()*760);
+			            var randY = Math.floor(Math.random()*440);
+			            ss[i].style.left = randX + 300 + 'px';
+			            ss[i].style.top = randY + 20 + 'px';
+			        }
+		</script>
+	</body>
+</html>

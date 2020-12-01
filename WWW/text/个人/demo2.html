@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+</head>
+<body>
+<form action="" method="post" name="myForm">
+	姓名: <input type="text" name="Text">
+	<input type="submit" name="" value="提交" onclick="return FormsNullStop()">
+</form>
+<script type="text/javascript">
+	function FormsNullStop(){
+		var Form=document.forms['myForm']['Text'].value;
+		if (Form=='') {
+			alert('请输入内容！不能为空！')
+			return false;
+		}
+	}
+</script>
+	
+</body>
+</html>

@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="7c10a7e8-caf9-434e-9f69-585d288d3b65" name="Default Changelist" comment="Default Changelist" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeStyleSettingsInfer">
+    <option name="done" value="true" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectCodeStyleSettingsMigration">
+    <option name="version" value="1" />
+  </component>
+  <component name="ProjectId" id="1bfSMX2PsR2Q9pGe2u7yEBYNida" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="project.structure.last.edited" value="Project" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="？" />
+      <command value="icon.html" />
+    </option>
+  </component>
+  <component name="RunAnythingContextRecentDirectoryCache">
+    <option name="paths">
+      <recentPaths value="$PROJECT_DIR$" />
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="7c10a7e8-caf9-434e-9f69-585d288d3b65" name="Default Changelist" comment="" />
+      <created>1589021607059</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1589021607059</updated>
+      <workItem from="1589021610912" duration="603000" />
+      <workItem from="1589022250048" duration="473000" />
+      <workItem from="1589022832034" duration="410000" />
+      <workItem from="1589023254405" duration="226000" />
+      <workItem from="1589023659811" duration="1300000" />
+      <workItem from="1589025370341" duration="596000" />
+      <workItem from="1589045401524" duration="997000" />
+      <workItem from="1589046432337" duration="211000" />
+      <workItem from="1589046728510" duration="27000" />
+      <workItem from="1589046821236" duration="431000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.History.Properties">
+    <option name="COLUMN_ORDER">
+      <list>
+        <option value="0" />
+        <option value="2" />
+        <option value="3" />
+        <option value="1" />
+      </list>
+    </option>
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="342" y="313" width="629" height="332" key="#!notification.configurable.display.name.notifications!" timestamp="1589025660831">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="342" y="313" width="629" height="332" key="#!notification.configurable.display.name.notifications!/0.0.1440.929@0.0.1440.929" timestamp="1589025660831" />
+    <state x="171" y="111" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1589045968430">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="171" y="111" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1440.929@0.0.1440.929" timestamp="1589045968430" />
+    <state x="395" y="145" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1589046117843">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="395" y="145" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1440.929@0.0.1440.929" timestamp="1589046117843" />
+    <state x="448" y="161" key="FileChooserDialogImpl" timestamp="1589046100899">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="448" y="161" key="FileChooserDialogImpl/0.0.1440.929@0.0.1440.929" timestamp="1589046100899" />
+    <state width="314" height="242" key="RunAnythingAction_Filter_Popup" timestamp="1589021700646">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state width="314" height="242" key="RunAnythingAction_Filter_Popup/0.0.1440.929@0.0.1440.929" timestamp="1589021700646" />
+    <state x="67" y="0" key="SettingsEditor" timestamp="1589047141473">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="67" y="0" key="SettingsEditor/0.0.1440.929@0.0.1440.929" timestamp="1589047141473" />
+    <state x="293" y="211" width="840" height="1034" key="run.anything.popup" timestamp="1589045845868">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="293" y="211" width="840" height="1034" key="run.anything.popup/0.0.1440.929@0.0.1440.929" timestamp="1589045845868" />
+    <state x="299" y="-1" key="search.everywhere.popup" timestamp="1589021907955">
+      <screen x="0" y="0" width="1440" height="929" />
+    </state>
+    <state x="299" y="-1" key="search.everywhere.popup/0.0.1440.929@0.0.1440.929" timestamp="1589021907955" />
+  </component>
+</project>

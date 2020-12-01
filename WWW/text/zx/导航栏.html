@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>css元素hover時控制另一个元素的显示隐藏</title>
+    <style type="text/css">
+        *{
+			margin:0 ;
+		}
+	
+		div #yyy{
+			width: 720px;
+			height: 50pxpx;
+			background-color:red ;
+			margin: 0 auto;
+			
+		}
+		
+		.rrr{
+				   width: 100%;
+				   height: 50px;
+				   display:block;
+				   
+				   background-color: red;
+				   margin: 0 auto;
+				   padding:0;
+				   border-radius:100px 100px 30px 30px; 
+				   
+		}
+		.rrr .v1{
+			margin:0 auto;
+			--webkit-transition:background-color 1s;
+		}
+
+		div .v1{
+			align-content: center;
+			padding-top:15px ;
+			
+		}
+		.v1{
+			
+			width: 80px;
+			height: 35px;
+			background-color:red;
+			color: white;
+			display: inherit;
+	        display: block;
+			margin-top: 0px;
+			cursor:pointer;
+			float: left;
+			--webkit-transition:background-color 1s;
+			
+		}
+		.ttt{
+			display: inline;
+			
+		}
+
+		.v1:hover{
+			background-color: #00FFFF;
+			 border-radius:30px 50px 30px 30px;
+			 -webkit-transition:background-color 1s;
+			 -webkit-transition: height 1px;
+			  
+		}
+		.v1 .ttt{
+			display: none;
+			
+			
+		}
+		.v1:hover .ttt{
+			display: block;
+			background-color: #00FFFF;
+			width: 80px;
+			float:right;
+			position:relative;
+			list-style: none;
+			left: 0px;
+			margin-top:14px ;
+           border-radius:10px 10px 10px 10px; 
+		   -webkit-transition:background-color  1s;
+		   
+	     }
+			.wom1{
+				width: 500px;
+				height: 500px;
+				border: #000000 0.0625rem solid;
+				position: relative;
+			}
+			.wom2{
+				width: 100px;
+				height: 100px;
+				border: #1A59B7 1px solid;
+				position:relative;
+				top:40px;
+				left: 40px;
+				
+				border-radius:50px ;
+			}
+			.wom3{
+				width: 100px;
+				height: 100px;
+				border: #1A59B7 1px solid;
+				top: 40px;
+				left: 120px;
+				position:absolute;
+				border-radius:50px;
+			}
+			.wom4{
+				width: 100px;
+				height: 100px;
+				border: #1A59B7 1px solid;
+				top: 40px;
+				left:200px;
+				position:absolute;
+				border-radius:50px;
+			}
+		/* 	.wom5{
+				width: 100px;
+				height: 100px;
+				border: #1A59B7 1px solid;
+				top: 40px;
+				left:280px;
+				position:absolute;
+				border-radius:50px;
+			} */
+			.wom6{
+				width: 100px;
+				height: 100px;
+				border: #1A59B7 1px solid;
+				top: 100px;
+				left:80px;
+				position:absolute;
+				border-radius:50px;
+			}
+			.wom7{
+				width: 100px;
+				height: 100px;
+				border: #1A59B7 1px solid;
+				top: 100px;
+				left:160px;
+				position:absolute;
+				border-radius:50px;
+			}
+			
+			 
+			 </style>
+</head>
+<body>
+	<div>
+		<div class="rrr">
+			
+		<div id="yyy">
+	<ul class="v1">首页
+		
+		<ul class="ttt">
+		<li>内容</li>
+		<li>内容</li>
+		<li>内容</li>
+		<li>内容</li>
+		</ul>
+		
+		
+	</ul>
+	<ul class="v1" >联系我们
+		
+		   <ul class="ttt">
+		   <li style="width: 300px;"><img src="img/ewm.jpg" width="100px" style="margin-left: -30px; margin-top:10px ;"></li>
+		   </ul>
+			
+		</ul>
+		
+	<ul class="v1">产品页面
+		<ul class="ttt">
+			<li>?</li>
+			<li>客官</li>
+			<li>想来点神么嘛？</li>
+			<li>啤酒香烟</li>
+			<li>麻辣小龙虾</li>
+			<li>麻婆豆腐</li>
+			<li>忘情水呀？
+			</li>
+		</ul>
+	</ul>
+	<ul class="v1">视频教程
+		<ul class="ttt">
+			<li>点我</li>
+			<li>点我</li>
+			<li>点我</li>
+		</ul>
+	</ul>
+	<ul class="v1">视频下载
+		<ul class="ttt">
+			<li>这里！</li>
+			<li>这里！</li>
+			<li>这里！</li>
+			<li>这里</li>
+		</ul>
+	</ul>
+	<ul class="v1">资源下载
+		<ul class="ttt">
+			<li>视频</li>
+			<li>文档</li>
+			<li>没了。。</li>
+			<li>图片</li>
+		</ul>
+	</ul>
+	           </div>
+	    </div>
+		</div>
+		
+		<div class="wom1">
+			<div class="wom2">
+				
+			</div>
+			<div class="wom3">
+				
+			</div>
+			<div class="wom4">
+				
+			</div>
+			<div class="wom5">
+				
+			</div>
+			<div class="wom6">
+				
+			</div>
+			<div class="wom7">
+				
+			</div>
+			<div class="wom8">
+				
+			</div>
+		</div>
+		
+</body>
+
+
+</html>

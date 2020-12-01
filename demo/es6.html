@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+
+
+        class Student{
+            constructor(name,age,feel,sid,){
+                this.name=name;
+                this.age=age;
+                this.fell=fell;
+                this.sid=sid;
+            }
+            say(){
+                console.log('名字：'+this.name+',年龄：'+this.age+'情感：'+this.fell+"")
+            }
+            eat(){
+                console.log('A吃')
+            }
+            study(){
+                console.log('student')
+            }
+            
+        }
+        class Teacher {
+            constructor(name,age,feel,sid,){
+                this.name=name;
+                this.age=age;
+                this.fell=fell;
+                this.sid=sid;
+            }
+            say(){
+                console.log('名字：'`this.name`)
+            }
+            eat(){
+                console.log('B吃')
+            }
+            study(){
+                console.log('student')
+            }
+        }
+        
+        class Cat_Dog {
+            constructor(name,age){
+                this.name=name;
+                this.age=age;
+
+            }
+            eat(){
+                console.log('吃');
+                
+            }
+        }
+        class Cat extends Cat_Dog{
+            constructor(name,age,color) {
+                super(name,age)
+                this.color=color;
+            }
+            tatch(){
+
+            }
+        }
+        class Dog extends Cat_Dog{
+            constructor(height) {
+                super(name,age)
+                this.height=height;
+            }
+            look(){
+
+            }
+        }
+        let cat =new Cat('zx',18,'black');
+
+    </script>
+</head>
+
+<body>
+    <div class="name">  waht heol?</div>
+</body>
+
+</html>

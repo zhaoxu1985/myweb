@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style type="text/css">
+		 	body{
+		 		width:80%;
+		 		margin:0 auto;
+				
+		 	}
+			.top{
+				height: 80px;
+				border: 1px solid black;
+				background-color: azure;
+			}
+			.deg{
+				float: right;
+				width:6%;
+				height: 80px;
+				
+				position: absolute;
+				right: 300px;
+				top: 10px;
+			}
+			
+		     .nav{
+		     	/* border: 1px solid black; */
+		     	width: 80%;
+		        height: 70px;
+		     	/* overflow: hidden; */
+				/* position:absolute; */
+		     	margin: 0 auto;
+			
+		     }
+			 .nav_xia{
+				 width: 100%;
+				 position: relative;
+				 /* border: 1px solid black; */
+				 /* margin: 0 auto; */
+				 display: inline-block;
+			 }
+			 
+				.nav .nav_bg_img img{
+					position: absolute;
+					z-index:0;
+					height: 70px;
+					width: 100%;
+					display: inline-block;
+				}
+			
+		   .nav_li{
+			   width: 100%;
+			   height: 44px;
+				/* border-collapse: collapse; */
+			   /* border: 1px solid black; */
+			   position: absolute;
+			   z-index: 20;
+			   
+		   }
+		   .nav_li_wai{
+			   width:100px;
+			   height: 40px;
+			   /* border:1px solid red; */
+			   margin-left:60px;
+			   
+		
+		   }
+		   .nav_li li{
+			   float: left;
+			   /* border: 1px solid black; */
+			   height: 100%;
+			   color: white;
+			   width: 10%;
+			   margin-left:;
+			   list-style: none;
+			   line-height: 35px;
+		       text-align: center;
+			   
+			   
+		   }.nav_li li:hover{
+			   background: url(img/pic03.png);
+			   background-position:center;
+			   
+		   }
+		   .banner{
+			   width: 80%;
+			   /* border: 1px solid black; */
+			   margin: 0 auto;
+		   }
+		   .banner img{
+			   width: 100%;
+		   }
+		   .sin_login{
+			   width: 80%;
+			   /* border: 1px solid black; */
+			   margin: 0 auto;
+			   height: 30px;
+			   background: url(img/pic01.jpg);
+		   }
+		   .sin_login img{
+		
+		   }
+		   .submit{
+			   position: relative;
+			   width: 100%;
+			   height: 300px;
+			   /* border: 1px solid black; */
+			   padding-top: 1px;
+		   }
+		   .chongwu{
+			   width: 100%;
+			   height: 500px;
+			   border: 1px solid black;
+			   margin: -30px auto;
+		   }
+		   .san{
+			width: 100%%;
+			border: 1px solid black;
+			margin: 0 auto;
+			height: 30px;
+			background: url(img/pic01.jpg);
+		   }
+				.td_left{
+					text-align: right;
+					width: 20%;
+				}
+		  table{
+			  color: forestgreen;
+		  }
+		    .bottom_nav{
+				width: 100%;
+				height: 100px;
+				border:1px solid #000000;
+				text-align: center;
+				background-color:  darkgray;
+			}
+			
+		</style>
+	</head>
+	<body>
+	<div class="top">
+		<img style="width:25%;margin-left: 100px;height: 80px;" src="img/logo.png"/>
+		<img class="deg" src="img/pic04.png"/>
+	</div>
+		<div class="nav">
+			<div class="nav_xia">
+				
+			
+					<div class="nav_bg_img">
+						<img src="img/navbg.png" >
+						
+					</div>
+					<div class="nav_li_wai">
+						<div class="nav_li">
+				      <li>首页</li>
+				      <li>萌宠领养</li>
+				      <li>萌宠食品</li>
+				      <li>萌宠咨询</li>
+				      <li>注册会员</li>
+					</div>
+						</div>
+			</div>
+		</div>
+				<div class="banner">
+					<img src="img/banner.jpg" >
+				</div>
+			<div class="sin_login">
+					<font style="color: white;position: absolute;margin:3px 35px;">会员注册</font>
+			
+				<div class="submit">
+					<table style="color: green;margin:70px auto;text-align: right;"  border="0" cellspacing="" cellpadding="">
+						 <tr>
+							 <td>昵称：</td>
+							 <td><input style="border: green 1px solid;" type="text" name="" /></td>
+						 </tr>
+						<tr>
+							 <td>邮箱：</td>
+							<td><input style="border: green 1px solid;"type="email" name="" /></td>
+						</tr>
+						<tr>
+							<td>手机：</td>
+							<td><input style="border: green 1px solid;" type="text" name="" id="" value="" /></td>
+						</tr>
+						<tr>
+							<td>设置密码：</td>
+							<td><input style="border: green 1px solid;" type="password" name="" id="" value="" /></td>
+						</tr>
+						<tr>
+							<td>确认密码：</td>
+							<td><input style="border: green 1px solid;" type="password" name="" id="" value="" /></td>
+						</tr>
+					</table>
+					
+				</div>
+			
+				
+					<div class="san">
+						<font style="color: white;position: absolute;margin:3px 35px;">会员注册</font>
+							
+					</div>
+					<div class="san_bottom">
+						<form action="" method="">
+								<table style="margin: 0 auto;width:60%;" border="0" cellspacing="" cellpadding="">
+									<tr>
+										<td class="td_left">所属种类：</td>
+										<td class="td_right">
+											<select style="border: 1px solid #228B22;width: 30%;">
+												<option value ="">--请选择--</option>
+												<option value="">猫</option>
+												<option value="">狗</option>
+												<option value="">鸭子</option>
+												<option value="">鸡子</option>
+												<option value="">蛾子</option>
+											</select>
+										</td>
+									</tr>
+									<tr>
+										<td style="text-align: right;">性别：</td>
+										<td>
+											<input type="radio" name="six" id="man" value="1" />男
+											<input type="radio" name="six" id="woman" value="0" />女
+										</td>
+									</tr>
+									<tr>
+										<td style="text-align: right;">年龄：</td>
+										<td>
+												<select style="border: 1px solid #228B22;width: 30%;">
+													<option value="">--请选择--</option>
+													<option value="">1</option>
+													<option value="">2</option>
+													<option value="">3</option>
+													<option value="">4</option>
+													<option value="">5</option>
+													<option value="">6</option>
+													<option value="">7</option>
+													<option value="">8</option>
+													<option value="">9</option>
+													<option value="">10</option>
+													<option value="">11</option>
+													<option value="">12</option>
+													<option value="">13</option>
+													<option value="">14</option>
+													<option value="">15</option>
+													<option value="">16</option>
+													<option value="">17</option>
+													<option value="">18</option>
+													<option value="">19</option>
+												</select>
+										</td>
+									</tr>
+									<tr>
+										<td style="text-align: right;">喜爱的食物：</td>
+										<td style="width:350px;">
+											<input style=" vertical-align: middle;display: inline-block;width: 20px;height: 20px;" type="checkbox" name="" id="" value="" />面食
+											<input style="vertical-align: middle; display: inline-block;width: 20px;height: 20px;" type="checkbox" name="" id="" value="" />青草
+											<input style="vertical-align: middle; display: inline-block;width: 20px;height: 20px;" type="checkbox" name="" id="" value="" />青草
+											<input style="vertical-align: middle; display: inline-block;width: 20px;height: 20px;" type="checkbox" name="" id="" value="" />青草
+											<input style="vertical-align: middle; display: inline-block;width: 20px;height: 20px;" type="checkbox" name="" id="" value="" />青草
+											<input style="vertical-align: middle; display: inline-block;width: 20px;height: 20px;" type="checkbox" name="" id="" value="" />青草
+											
+										</td>
+									</tr>
+									<tr>
+										<td style="height: 100px;text-align: right;">备注:</td>
+										<td>
+												
+												<input style="width: 100%;height: 200px" type="text" placeholder="请填写内容">
+												
+										</td>
+									</tr>
+									<tr>
+										<td colspan="2" align="center">
+											<input style="width: 30%;height: 35px;background: url(img/pic02.png);background-size:150px;background-position: center; border: 0;" type="submit" id="" name="" value="完成注册" />
+										</td>
+									</tr>
+								</table>
+						</form>
+						
+					</div>
+					<div class="bottom_nav">
+						<p>2019免责声明：想在抄袭咋抄袭</p>
+						<p>我也是抄袭来的</p>
+					</div>
+				</div>
+				
+			</div>
+				
+			
+	</body>
+</html>
+	
