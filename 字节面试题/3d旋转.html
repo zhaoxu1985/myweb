@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0 auto;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            perspective: 800px;
+            overflow: hidden;
+        }
+
+        #round {
+            width: 800px;
+            height: 800px;
+            border-radius: 700px;
+            transform-style: preserve-3d;
+            background: radial-gradient(rgba(201, 100, 124, 0.5), rgb(104, 189, 142));
+            margin-top: 10px;
+            position: relative;
+            transform: rotateX(45deg);
+            animation: rotating 5s linear 0s infinite;
+        }
+
+        #round div {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            position: absolute;
+            color: white;
+            /* border-radius: 50px; */
+        }
+
+        @keyframes rotating {
+            0% {
+                transform: rotateX(45deg) rotateZ(0deg);
+            }
+
+            100% {
+                transform: rotateX(45deg) rotateZ(360deg);
+            }
+        }
+
+        #round div:nth-child(1) {
+            left: 50%;
+            top: 20px;
+        }
+
+        #round div:nth-child(2) {
+            top: 50%;
+            left: 20px;
+        }
+
+        #round div:nth-child(3) {
+            right: 20px;
+            top: 50%;
+        }
+
+        #round div:nth-child(4) {
+            bottom: 20px;
+            left: 50%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="round">
+        <div class="item">文字</div>
+        <div class="item">文字</div>
+        <div class="item">文字</div>
+        <div class="item">文字</div>
+    </div>
+    <script>
+        let round = document.getElementById('round')
+        let div = document.getElementsByClassName('item')
+        let status = true;
+        let animationCallback = function () {
+            // console.log(getRotate(round), ' <= == 87 ')
+            div[0].style.transform =
+                ` translateZ(50px)  translateX(-50%) rotateZ(${getRotate(round)*-1}deg)`
+            div[1].style.transform =
+                ` translateZ(50px)  translateY(-50%) rotateZ(${getRotate(round)*-1}deg)`
+            div[2].style.transform =
+                ` translateZ(50px)  translateY(-50%) rotateZ(${getRotate(round)*-1}deg)`
+            div[3].style.transform =
+                ` translateZ(50px)  translateX(-50%) rotateZ(${getRotate(round)*-1}deg)`
+            // if (status) {
+            requestAnimationFrame(animationCallback)
+            // }
+        }
+        console.log(div[1].style)
+
+        function getRotate(el) {
+            var st = window.getComputedStyle(el, null);
+            var tr = st.getPropertyValue("-webkit-transform") ||
+                st.getPropertyValue("-moz-transform") ||
+                st.getPropertyValue("-ms-transform") ||
+                st.getPropertyValue("-o-transform") ||
+                st.getPropertyValue("transform") ||
+                "FAIL";
+            var values = tr.split('(')[1].split(')')[0].split(',');
+            var a = values[0];
+            var b = values[1];
+            var c = values[2];
+            var d = values[3];
+            var scale = Math.sqrt(a * a + b * b);
+            var sin = b / scale;
+            var angle = Math.round(Math.atan2(b, a) * (180 / Math.PI));
+            return angle
+        }
+
+        let fram = requestAnimationFrame(animationCallback)
+        round.addEventListener('animationstart', (e) => {
+
+        })
+        setTimeout(() => {
+            status = false
+        }, 2000)
+    </script>
+</body>
+
+</html>

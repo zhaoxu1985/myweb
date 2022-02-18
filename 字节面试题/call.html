@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function mySymbol(obj) {
+            // 不要问我为什么这么写，我也不知道就感觉这样nb
+            let unique = (Math.random() + new Date().getTime()).toString(32).slice(0, 8)
+            // 牛逼也要严谨
+            return unique
+        }
+        //接下来我们一并把多参数和执行完删除自定义方法删除掉一块搞定
+        Function.prototype.myCall1 = function (context) {
+            // 如果没有传或传的值为空对象 context指向window
+            context = context || window
+            let fn = mySymbol(context)
+            context[fn] = this //给context添加一个方法 指向this
+            // 处理参数 去除第一个参数this 其它传入fn函数
+            context[fn](Array.prototype.slice.call(arguments, 1)) //执行fn
+            delete context[fn] //删除方法
+        }
+
+        let Person = {
+            name: 'Tom',
+            say(age) {
+                console.log(this)
+                console.log(`我叫${this.name}我今年${age}`)
+            }
+        }
+
+        Person1 = {
+            name: 'Tom1'
+        }
+
+        Person.say.myCall1(Person1, 18) //我叫Tom1我今年18
+    </script>
+</body>
+
+</html>

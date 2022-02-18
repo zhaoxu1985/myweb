@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [8, 15, 6, 3, 20, 25],
+            k = 30
+        // 二分查找
+        function binarySearch(arr, target) {
+            let result = null
+            let start = 0
+            let center = 0
+            let end = arr.length
+            while (true) {
+                center = parseInt((start + end) / 2)
+                if (target > arr[center]) {
+                    start = center + 1
+                } else if (target < arr[center]) {
+                    end = center - 1
+                } else if (target === arr[center]) {
+                    result = arr[center]
+                    break;
+                }
+            }
+            return [result, center]
+        }
+
+        function searchIndex(arr, k) {
+            let newArr = arr.sort((a, b) => {
+                return a - b
+            })
+            if (newArr.indexOf(k) === -1) {
+                console.log(newArr[0])
+            } else {
+                let index = binarySearch(newArr, k)[1] + 1
+                console.log(`元素k是第${index}大的元素`)
+            }
+
+        }
+        searchIndex(arr, k)
+    </script>
+</body>
+
+</html>

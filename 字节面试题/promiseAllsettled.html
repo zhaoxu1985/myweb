@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        Promise.allSettled = (arr) => {
+            let srr = []
+            for (var i = 0; i < arr.length; i++) {
+                arr[i].then(res => {
+                    var b = {};
+                    b.staust = 'fuill';
+                    b.value = res;
+                    srr.push(b)
+
+                }).catch(err => {
+                    var a = {}
+                    a.staust = 'resobject';
+                    a.err = err;
+                    srr.push(a)
+                })
+                const ss = new Promise((res, rej) => {
+                    setTimeout(() => {
+                        console.log(srr)
+                    }, 2000)
+                })
+
+            }
+        }
+        const p1 = new Promise((res, rej) => {
+            setTimeout(() => {
+                rej('p1')
+            }, 1000)
+        })
+        const p2 = new Promise((res, rej) => {
+            setTimeout(() => {
+                res('p2')
+            }, 500)
+        })
+        const p3 = new Promise((res, rej) => {
+            setTimeout(() => {
+                res('p3')
+            }, 1100)
+        })
+        Promise.allSettled([p1, p2, p3]).then(res => {
+            console.log(res)
+        })
+    </script>
+</body>
+
+</html>

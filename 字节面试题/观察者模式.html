@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button id="btn1">添加</button>
+    <button id="btn2">清空</button>
+    <button id="btn3">通知</button>
+    <button id="btn4">查看寨主</button>
+    <script type="module">
+        let btn1 = document.getElementById('btn1')
+        let btn2 = document.getElementById('btn2')
+        let btn3 = document.getElementById('btn3')
+        let btn4 = document.getElementById('btn4')
+
+        import {Subject,Observer} from "./观察者模式.js"
+
+        let 老板 = new Subject()
+        let num = 1
+        btn1.onclick=function(){
+            let num1 = num
+            let 寨主1 = new Observer()
+            寨主1.update=function(params){
+                console.log('通知到寨主'+num1,params);
+            }
+            num++
+            老板.addObserver(寨主1)
+        }
+        btn2.onclick=function(){
+            老板.observers.empty()
+        }
+        btn3.onclick = function(){
+            老板.notify('还钱了!!')
+        }
+        btn4.onclick=function(){
+            console.log(老板.observers.count());
+        }
+    </script>
+</body>
+
+</html>

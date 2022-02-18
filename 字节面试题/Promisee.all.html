@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function promiseAll(promises) {
+            return new Promise((resolve, reject) => {
+                let result = []
+                for (let i = 0; i < promises.length; i++) {
+                    promises[i].then(res => {
+                        result.push(res)
+                        if (result.length === promises.length) {
+                            resolve(result)
+                        }
+                    }).catch(rej => {
+                        reject(rej)
+                    })
+                }
+            })
+        }
+        const a = new Promise(res => {
+            res('res')
+        })
+        const b = new Promise((res, rej) => {
+            res('rejsss')
+        })
+        promiseAll([a, b]).then(res => {
+            console.log(res)
+        }).catch(err => {
+            throw Error(err)
+        })
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+<script>
+var oldArr = 
+
+[
+  [''],
+  ['哔哩哔哩1'],
+  ['一期基金',[['T']],[['xxx']]],
+  ['哔哩哔哩2'],  
+  [''],
+  ['测试'],
+  ['英雄联盟',[['I'],['B'],['B']]],
+  [' ',[['B'],['I']]],
+  ['一期基金',[['P'],['B']],[['xxx']]],
+  ['怪兽充电',[['B']]],  
+  ['赶集网',[['B'],['B']]],
+  ['工具',[['U'],['B'],['U'],['I']]],
+  [''],
+  ['学习',[['I'],['B'],['I'],['U']]],
+  ['二期基金',[['P'],['B'],['I']],[['xxx']]]
+];
+
+
+/*
+    comments: 查看时请打开一个,因为操作了原有数组（引用类型）,同时打开多个会错乱
+    version:1.0
+    author:zx
+*/
+
+
+// 一.这个是符合题意的 ，并且没有去重
+function formatArr(oldArr){
+    //以遇到P或T的下一个位为合并目标 把遇到下一个P或T前的所有内容，合并到这一个 
+    //用nextCount变量记录索引   默认为0：即第一个为合并对象，如果第一个便是P或T，也会被捕捉到
+    var nextCount=0
+    let newArr = []
+    oldArr.forEach((e1,i1) => {
+        //素组第n[1]个元素不为空进行判断是否包含T或P
+        if(e1[1]!=undefined){
+            if( e1[1][0] == "P" || e1[1][0] == "T"){
+                newArr.push(oldArr[nextCount]);
+                newArr.push(oldArr[i1]);
+                return nextCount = i1+1
+            }
+        }
+        if(e1[0].constructor == String){
+           if(nextCount!=i1){
+            oldArr[nextCount][0]+=oldArr[i1][0]
+           if(e1[1] != undefined){
+                if(e1.constructor==Array){
+                    e1[1].forEach(function(e3,i3){
+                        oldArr[nextCount].push(e3)
+                    })
+                }
+            }
+           }
+        }
+    });
+    return newArr
+};
+
+// console.log(formatArr(new Array(...oldArr)));
+
+
+// 二.这个是去重之后的
+function formatArr2(oldArr){
+    //以遇到P或T的下一个位为合并目标 把遇到下一个P或T前的所有内容，合并到这一个 
+    //用nextCount变量记录索引   默认为0：即第一个为合并对象，如果第一个便是P或T，也会被捕捉到
+    let nextCount=0
+    let newArr = []
+    oldArr.forEach((e1,i1) => {
+        //素组第n[1]个元素不为空进行判断是否包含T或P
+        if(e1[1]!=undefined){
+            //如果为P或T 记录 当前这个不需要合并的下一个索引为合并对象
+            //把合并后的值 和 不需要合并的值 推到新的数组中
+            if( e1[1][0] == "P" || e1[1][0] == "T"){
+                //现在的i1则是不需要合并的索引值
+                newArr.push(oldArr[nextCount]);
+                if(oldArr[nextCount][1].length ==0){
+                    oldArr[nextCount].splice(1)
+                }
+                //过滤重复项
+                if(oldArr[nextCount][1] != undefined){
+                    let count = ''
+                    //先便利所有项的值,拼接字符串
+                    // 利用es6 Set类型的特性，进行去重(Set类型中的值禁止出现重复，有则会自动过滤重复的值)
+                    oldArr[nextCount][1].forEach(function(a,b){
+                        count+=a[0]
+                    })
+                    let [...arr] = new Set(count);
+                    oldArr[nextCount][1] = arr
+                }
+                newArr.push(oldArr[i1]);
+                return nextCount = i1+1
+            }
+        }
+
+        if(e1[0].constructor == String){
+           if(nextCount!=i1){
+            //合并文字 ：即第0项 合并后边的索引为0的第一项
+            oldArr[nextCount][0]+=oldArr[i1][0]
+            //如果要合并的下一项为空,则不进行合并
+            if(e1[1] != undefined){
+                if(e1.constructor==Array){
+                    e1[1].forEach(function(e3,i3){
+                    // e3：每个元素索引为1的数组内容
+                        //合并到 P或T的下一个元素身上
+                        oldArr[nextCount][1].push(e3)
+                    })
+                }
+            }
+            //如果需要合并的第一项为没有, 则创建一个空数组，后续进行添加
+            if(oldArr[nextCount][1] == undefined){
+                oldArr[nextCount][1]=[]
+            }
+           }
+        }
+    });
+    return newArr
+}
+
+// console.log(formatArr2(new Array(...oldArr)));
+
+
+// 三.符合给定格式的  只合并两项, 如果要合并的项目为空,继续向下找，必须合并两项
+function formatArr3(oldArr){
+    //以遇到P或T的下一个位为合并目标 把遇到下一个P或T前的所有内容，合并到这一个 
+    //用nextCount变量记录索引   默认为0：即第一个为合并对象，如果第一个便是P或T，也会被捕捉到
+    let nextCount=0
+    let newArr = []
+    //记录合并的次数, 逻辑中控制合并两次,空项目贪婪匹配
+    let mergeCount = 0
+    let nextArr = []
+    oldArr.forEach((e1,i1) => {
+        
+        nextArr.push(nextCount)
+        if(mergeCount>=2){
+            nextCount=i1
+            mergeCount=0
+            
+        }
+        
+        if(oldArr[i1][0]!=''){
+            mergeCount+=1
+        }
+        //素组第n[1]个元素不为空进行判断是否包含T或P
+        if(e1[1]!=undefined){
+            //如果为P或T 记录 当前这个不需要合并的下一个索引为合并对象
+            //把合并后的值 和 不需要合并的值 推到新的数组中
+            
+                
+            if( e1[1][0] == "P" || e1[1][0] == "T"){
+                //现在的i1则是不需要合并的索引值 P T
+                let [...arr] = new Set(nextArr)
+                arr.forEach(function(a1,a2){
+                    newArr.push(oldArr[a1])
+                    if(oldArr[a1][1].length ==0){
+                        oldArr[a1].splice(1)
+                    }
+                     //过滤重复项
+                    if(oldArr[a1][1] != undefined){
+                        var count = ''
+                        //先便利所有项的值,拼接字符串
+                        // 利用es6 Set类型的特性，进行去重(Set类型中的值禁止出现重复，有则会自动过滤重复的值)
+                        oldArr[a1][1].forEach(function(a,b){
+                            count+=a[0]
+                        })
+                        let [...arr] = new Set(count);
+                        oldArr[a1][1] = arr
+                    }
+                
+                })
+                //把不需要合并的值推送到当前的新数组中
+                newArr.push(oldArr[i1]);
+                mergeCount=0
+                nextCount = i1+1
+                nextArr=[]
+                return
+            }
+        }
+        if(e1[0].constructor == String){
+         //如果需要合并的第一项为没有, 则创建一个空数组，后续进行添加
+            if(oldArr[nextCount][1] == undefined){
+                oldArr[nextCount][1]=[]
+            }
+           if(nextCount!=i1){
+                //合并文字 ：即第0项 合并后边的索引为0的第一项
+                oldArr[nextCount][0]+=oldArr[i1][0]
+                //如果要合并的下一项为空,则不进行合并
+                if(e1[1] != undefined){
+                    if(e1.constructor==Array){
+                        e1[1].forEach(function(e3,i3){
+                        // e3：每个元素索引为1的数组内容
+                            //合并到 P或T的下一个元素身上
+
+                            oldArr[nextCount][1].push(e3)
+                        })
+                    }
+                }
+
+           }
+        }
+    });
+    return newArr
+}
+
+console.log(formatArr3(new Array(...oldArr)))
+
+
+
+
+
+// 格式化后数组：
+let format = 
+[
+        ['哔哩哔哩1'],
+        ['一期基金',[['T']],[['xxx']]]
+        ['哔哩哔哩2测试'],
+        ['英雄联盟 ',[['B'],['I']]],
+        ['一期基金',[['P'],['B']],[['xxx']]]
+        ['怪兽充电赶集网',[['B']]],
+        ['工具学习',[['B'],['I'],['U']]],
+        ['二期基金',[['P'],['B'],['I']],[['xxx']]]
+]
+    </script>
+</body>
+</html>

@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
+    "@vant/weapp": "^1.6.4",
     "babel-cli": "^6.26.0",
     "babel-preset-es2015": "^6.24.1"
   },

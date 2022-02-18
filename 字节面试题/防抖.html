@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        function debounce(fn) {
+            let timeout = null // 创建一个标记用来存放定时器的返回值 
+            return function () {
+                clearTimeout(timeout)
+                // 每当用户输入的时候把前一个 setTimeout clear 掉 
+                timeout = setTimeout(() => {
+                    // console.log(arguments)
+                    fn.apply(this, arguments)
+                }, 1000)
+            }
+        }
+
+
+        function sayHi() {
+            console.log('防抖成功')
+        }
+        debounce(sayHi)()
+    </script>
+</body>
+
+</html>

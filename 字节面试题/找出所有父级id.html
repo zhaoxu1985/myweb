@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        function fn(data /*数据源*/ , target /* 查找的内容 type=string*/ ) {
+            let keyT = []
+
+            function zhao(data /*数据源*/ , target /* 查找的内容 type=string*/ , keys = []) {
+                try {
+                    data.forEach((item, i, arr) => {
+                        console.log(i)
+                        if (item.children) {
+                            keys.push(item.id)
+                            if (item.id === target) {
+                                keys.push(item.id)
+                                throw Error(keys)
+                            }
+                            const isFind = item.children.find(item => {
+                                return item.id === target
+                            })
+                            if (isFind) {
+                                keys.push(isFind.id)
+                                throw Error(keys)
+                            } else {
+                                zhao(item.children, target, keys)
+                            }
+                            // keys = keys.splice(1)
+                            keys = []
+                        } else {
+                            if (item.id === target) {
+                                keys.push(item.id)
+                                throw Error(keys)
+                            }
+                        }
+
+                    });
+                } catch (e) {
+                    keyT = e.toString().slice(7)
+                }
+            }
+            zhao(data, target)
+            return keyT
+        }
+        const data = [{
+            id: "1",
+            name: "test1",
+            children: [{
+                    id: "11",
+                    name: "test11",
+                    children: [{
+                        id: "111",
+                        name: "test111",
+                        children: [{
+                                id: "115",
+                                name: "test111"
+                            },
+                            {
+                                id: "116",
+                                name: "test112",
+                                children: [{
+                                    id: "01",
+                                    name: "test112",
+                                }, {
+                                    id: "02",
+                                    name: "test112",
+                                }, {
+                                    id: "117",
+                                    name: "test112",
+                                    children: [{
+                                        id: "118",
+                                        name: "test112",
+                                        children: [{
+                                            id: "119",
+                                            name: "test112",
+                                        }]
+                                    }]
+                                }]
+                            }
+                        ]
+                    }, {
+                        id: "112",
+                        name: "test112",
+                    }]
+                }, {
+                    id: "12",
+                    name: "test12",
+                    children: [{
+                        id: "121",
+                        name: "test121"
+                    }, {
+                        id: "122",
+                        name: "test122",
+                        children: [{
+                            id: "123",
+                            name: "test122",
+                            children: [{
+                                id: "124",
+                                name: "test122",
+                                children: [{
+                                    id: "125",
+                                    name: "test122"
+                                }]
+                            }]
+                        }]
+                    }]
+                },
+                {
+                    id: "13",
+                    name: "test12",
+                    children: [{
+                        id: "131",
+                        name: "test121"
+                    }, {
+                        id: "132",
+                        name: "test122"
+                    }]
+                }
+            ]
+        }]
+        console.log(fn(data, '125'))
+    </script>
+</body>
+
+</html>

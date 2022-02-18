@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>auto complete</title>
+    <style>
+        bdi {
+            color: rgb(0, 136, 255);
+        }
+
+        li {
+            list-style: none;
+            cursor: pointer;
+            margin: 0;
+        }
+
+        .container {
+            padding: 0;
+        }
+    </style>
+</head>
+
+<body>
+    <input class="inp" type="text">
+    <button id="searchBtn">search</button>
+    <section>
+        <ul class="container"></ul>
+    </section>
+</body>
+<script>
+    // 防抖函数，优化用户输入
+    function debounce(fn, timeout = 500) {
+        let timer
+        return (args) => {
+            if (timer) clearTimeout(timer)
+            timer = setTimeout(() => {
+                fn.call(fn, args)
+            }, timeout)
+        }
+    }
+    // 对搜索结果进行缓存，已经搜索的关键字直接返回结果
+    function cache(fn) {
+        let cacheMap = new Map()
+        return async (name) => {
+            if (name === '') {
+                return container.innerHTML = ''
+            }
+            if (cacheMap.get(name)) {
+                console.log('返回缓存')
+                return container.innerHTML = cacheMap.get(name)
+            } else {
+                let data = await fn(name)
+                const result = data.join('')
+                cacheMap.set(name, result)
+                container.innerHTML = result
+            }
+        }
+    }
+    // 使用data模拟数据
+    const data = ["抖音下载", "抖音下载2020", "抖音下载2021", " 抖音下载2022", "抖音极速版", "抖音短视频", "抖音小店"]
+
+    async function handInput(searchValue) {
+        //没有缓存 搜索触发, 请求数据
+        // let {
+        //     dataList: res
+        // } = await axios.get(url, {
+        //     params: {
+        //         value: searchValue
+        //     }
+        // })
+        let regex = new RegExp(`\(${searchValue}\)`)
+        const dataRes = data.reduce((newValue, item) => {
+            if (regex.test(item)) {
+                newValue.push(`<li>${item.replace(searchValue, `<bdi>$&</bdi>`)}</li>`)
+            }
+            return newValue
+        }, [])
+        return dataRes
+    }
+    const container = document.querySelector('.container');
+
+    const cacheInput = cache(handInput);
+    document.querySelector('.inp').addEventListener('input', debounce(e => {
+        cacheInput(e.target.value)
+    }))
+    container.addEventListener('click', (e) => {
+        //e.target.innerText
+        //实现对应跳转
+    })
+</script>
+
+</html>

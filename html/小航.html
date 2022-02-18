@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <style>
+        .booth {
+            width: 400px;
+
+            background: #ccc;
+            border: 10px solid #ddd;
+            margin: 0 auto;
+        }
+
+
+        #video {
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="booth">
+        <video id="video" width="400" height="300"></video>
+        <button id='tack'> snap shot</button>
+        <canvas id='canvas' width='450' height='450'></canvas>
+    </div>
+
+    <script>
+        function openMedia() {
+            let constraints = {
+                video: {
+                    width: 500,
+                    height: 500
+                },
+                audio: false
+            };
+            //获得video摄像头
+            video = document.getElementById('video');
+            let promise = navigator.mediaDevices.getUserMedia(constraints);
+            promise.then((mediaStream) => {
+                // mediaStreamTrack = typeof mediaStream.stop === 'function' ? mediaStream : mediaStream.getTracks()[1];
+                mediaStreamTrack = mediaStream.getVideoTracks()
+                video.srcObject = mediaStream;
+                video.play();
+            });
+        }
+        openMedia()
+        $(tack).click(function () {
+            canvas.getContext('2d').drawImage(video, 0, 0, 450, 450);
+            var image = new Image();
+            image.src = canvas.toDataURL("image/png");
+            console.log(image)
+        })
+    </script>
+</body>
+
+</html>

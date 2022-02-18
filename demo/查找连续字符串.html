@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let str = 'aAaaAbdbfeeFrrffffSqqQQQqsSSS'
+
+        function maxRepeat(str) {
+            str = str.toLocaleLowerCase()
+            let arr = []
+            let middle = ''
+            for (let i = 0; i < str.length + 1; i++) {
+                if (middle.length === 0) {
+                    middle += str[i]
+                    continue
+                }
+                if (middle[0] === str[i]) {
+                    middle += str[i]
+                } else {
+                    arr.push(middle)
+                    middle = str[i]
+                }
+            }
+            let max = arr.sort((a, b) => {
+                let s1 = a.length
+                let s2 = b.length
+                return s2 - s1
+            })[0]
+            return `最长字符串: ${max}`
+
+        }
+        console.log(maxRepeat(str))
+    </script>
+</body>
+
+</html>

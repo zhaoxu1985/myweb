@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let _toString = Object.prototype.toString
+        let map = {
+            array: 'Array',
+            object: 'Object',
+            function: 'Function',
+            string: 'String',
+            null: 'Null',
+            undefined: 'Undefined',
+            boolean: 'Boolean',
+            number: 'Number'
+        }
+        let getType = (item) => {
+            return _toString.call(item).slice(8, -1)
+        }
+
+
+        function deepClone(obj) {
+
+            if (typeof obj !== 'object') {
+                return obj
+            }
+            let result
+            if (Array.isArray(obj)) {
+                result = []
+            }
+            if (getType(obj) === 'Object') {
+                result = {}
+            }
+            for (let key in obj) {
+                if (obj.hasOwnProperty(key)) {
+                    result[key] = deepClone(obj[key])
+                }
+            }
+            return result
+        }
+        var obj = [{
+            a: 1,
+            b: 2,
+            c: {
+                a: 3,
+                b: 4,
+                arr: [1, 2, 3, {
+                    a: 1
+                }]
+            },
+            arr: [1, 2, 3, {
+                obj: 1
+            }],
+            str: '111'
+        }]
+        let cloneObj = deepClone(obj)
+        console.log(cloneObj)
+    </script>
+</body>
+
+</html>

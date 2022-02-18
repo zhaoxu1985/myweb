@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [{
+                id: 1,
+                name: '部门1',
+                pid: 0
+            },
+            {
+                id: 2,
+                name: '部门2',
+                pid: 1
+            },
+            {
+                id: 3,
+                name: '部门3',
+                pid: 2
+            },
+            {
+                id: 4,
+                name: '部门4',
+                pid: 3
+            },
+            {
+                id: 5,
+                name: '部门5',
+                pid: 4
+            },
+        ]
+
+        function deepTree(arr) {
+            let copyArr = JSON.parse(JSON.stringify(arr))
+            let result = [copyArr.shift()]
+            const deep = (arra, item) => {
+
+                arra.children = [
+                    Object.assign(item, {
+                        children: []
+                    })
+                ]
+                for (let i = 0; i < copyArr.length; i++) {
+                    deep(arra.children[0], copyArr.shift())
+                }
+
+            }
+            deep(result[0], copyArr.shift())
+            console.log(result)
+
+        }
+        deepTree(arr)
+    </script>
+
+</body>
+
+</html>

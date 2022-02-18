@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        // 当多个异步函数同时执行，其中有一个出错了，则正个promise的状态就是 reject 状态。 状态不可逆，错误之后，调用最后的catch ，错误处理函数
+
+        //当我们想要多个异步程序执行完成之后，再触发一个时间，需要使用   Promise.All()  方法
+            // 错误的做法： 顺序调用多个异步任务，再最后执行想要的代码。
+                    //1.异步和同步代码，js运行先执行同步任务，异步任务会被放入消息队列中，所以，错误
+
+
+            // 正确的做法:  /Promise.All() <<<<<<<<<<<<
+                //Promise.all([异步任务1().异步任务2()，异步任务3(),...]).then(最后一项任务执行完调用 )
+            
+            function a(){
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        console.log('a跑完了');
+                        resolve('a的接力棒')
+                    },5000)
+                })
+            }
+            function b(){
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        console.log('b跑完了');
+                        resolve('b的接力棒')
+                    },4000)
+                })
+            }
+            function c(){
+                return new Promise((resolve,reject)=>{
+                    setTimeout(()=>{
+                        console.log('c跑完了');
+                        resolve('c的接力棒')
+                    },1000)
+                })
+            }
+            //数组中的值，是谁先执行完，还是顺序的调用结果呢?
+            Promise.all([a(),b(),c()]).then((arr)=>{
+                //正确：arr中值的顺序就all中是数组所放的顺序
+                //与执行的顺序无关
+                console.log('比赛结束');
+                console.log(arr);
+            })
+
+ 
+    </script>
+</body>
+</html>

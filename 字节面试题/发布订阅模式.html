@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        class publishInstance {
+            canSubevent = ['a', 'b', 'c', 'd']
+            constructor() {
+                this.subs = new Map()
+            }
+            subscribe(name, cb) {
+                if (this.canSubevent.indexOf(name) === -1) return console.error('unknow event')
+                if (!this.subs.get(name)) {
+                    return this.subs.set(name, [cb])
+                }
+                this.subs.get(name).push(cb)
+            }
+            publish(name) {
+                this.subs.get(name).forEach(element => {
+                    element('发布了!!!')
+                });
+            }
+        }
+        let bus = new publishInstance()
+        bus.subscribe('a', () => {
+            console.log('订阅1')
+        })
+        bus.subscribe('a', () => {
+            console.log('订阅2')
+        })
+        bus.subscribe('a', () => {
+            console.log('订阅3')
+        })
+        bus.subscribe('a', () => {
+            console.log('订阅3')
+        })
+        bus.publish('a')
+    </script>
+</body>
+
+</html>

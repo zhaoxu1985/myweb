@@ -8,16 +8,18 @@
         'use strict'
         var s='aaavbbbcccddde';
         console.log([s]);
-        
         var strnumber=[...s].reduce(function (sum,i) { 
             sum[i]?sum[i]++:sum[i]=1;
             return sum
-         },{})
-        
+        },{})
+		console.log(strnumber)
 
     </script>
 </head>
 <body>
-    
+    <table border="" cellspacing="" cellpadding="">
+    	<tr><th>Header</th></tr>
+    	<tr><td>Data</td></tr>
+    </table>
 </body>
 </html>

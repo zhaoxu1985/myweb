@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        let arr = [{
+            id: 1,
+            name: '1',
+            children: [{
+                id: 2,
+                name: '1-1',
+                children: [{
+                    id: 3,
+                    name: '1-1-1',
+                    children: [{
+                        id: 4
+                    }]
+                }, {
+                    id: 5,
+                    name: '5-1',
+                    children: [{
+                        id: 6,
+                        name: '5-5-1'
+                    }]
+                }],
+
+            }],
+
+        }]
+
+        function deepChild(arr) {
+            let result = []     
+            const deep = (arr) => {
+                for (let i = 0; i < arr.length; i++) {
+                    if (arr[i].children) {
+                        deep(arr[i].children)
+                    } else {
+                        result.push(arr[i])
+                    }
+                }
+            }
+            deep(arr)
+            return result
+        }
+        console.log(deepChild(arr))
+    </script>
+</body>
+
+</html>
